@@ -1,4 +1,11 @@
 module.exports = {
+  siteMetadata: {
+    title: "ShehrVancouver",
+    description: "",
+    author: "Gursharan Singh",
+    siteUrl: "https://shehrvancouver.netlify.app",
+  },
+
   plugins: [
     "gatsby-plugin-netlify-cms",
     "gatsby-plugin-sass",
