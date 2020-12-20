@@ -28,7 +28,7 @@ const Carousel = () => {
   }));
   return (
     <div className="carousel-container">
-      <UncontrolledCarousel items={items} />
+      <UncontrolledCarousel items={items} pause="hover" />
     </div>
   );
 };

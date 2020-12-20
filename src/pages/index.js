@@ -10,7 +10,7 @@ function index() {
     <Layout>
       <Carousel />
       <Container>
-        <Row className="mt-5">
+        <Row className="mt-5 px-4">
           <h1>About Us</h1>
           <p>
             Studying in a different country can be both exciting and
