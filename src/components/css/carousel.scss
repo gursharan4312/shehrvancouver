@@ -3,10 +3,18 @@
     .carousel-inner {
       .carousel-item {
         img {
-          width: 90% !important;
+          //   width: 90% !important;
           max-width: 1000px;
           max-height: 500px;
           margin: 0 auto;
+          filter: brightness(0.8);
+        }
+        .carousel-caption {
+          display: block !important;
+          top: 40%;
+          h3 {
+            font-size: 4.5rem;
+          }
         }
       }
     }

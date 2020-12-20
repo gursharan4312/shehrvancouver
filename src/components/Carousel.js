@@ -23,8 +23,7 @@ const Carousel = () => {
   const items = data.allFile.edges.map((edge, i) => ({
     src: edge.node.childImageSharp.fluid.src,
     altText: edge.node.childImageSharp.fluid.originalName,
-    caption: "ShehrVancouver",
-    header: "header",
+    header: "Shehrvancouver",
     key: i,
   }));
   return (
