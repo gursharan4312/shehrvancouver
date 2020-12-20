@@ -1,0 +1,24 @@
+.carousel-container {
+  .carousel {
+    .carousel-inner {
+      .carousel-item {
+        img {
+          width: 90% !important;
+          max-width: 1000px;
+          max-height: 500px;
+          margin: 0 auto;
+        }
+      }
+    }
+    &:hover {
+      .carousel-control-next-icon,
+      .carousel-control-prev-icon {
+        width: 60px;
+        height: 60px;
+        padding: 10px;
+        background-size: 50% 50%;
+        background-color: #000;
+      }
+    }
+  }
+}
