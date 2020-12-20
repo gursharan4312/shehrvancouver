@@ -7,10 +7,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
   Container,
 } from "reactstrap";
 
@@ -27,27 +23,14 @@ const Header = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem className="mx-2">
-              <NavLink href="/components/">Send Confession</NavLink>
+              <NavLink href="/confession">Send Confession</NavLink>
             </NavItem>
             <NavItem className="mx-2">
-              <NavLink href="/components/">Jobs</NavLink>
+              <NavLink href="/jobs">Jobs</NavLink>
             </NavItem>
             <NavItem className="mx-2">
-              <NavLink href="https://github.com/reactstrap/reactstrap">
-                About Us
-              </NavLink>
+              <NavLink href="/accomodations">Accomodations</NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar className="mx-2">
-              <DropdownToggle nav caret>
-                Options
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>Option 1</DropdownItem>
-                <DropdownItem>Option 2</DropdownItem>
-                {/* <DropdownItem divider />
-                <DropdownItem>Reset</DropdownItem> */}
-              </DropdownMenu>
-            </UncontrolledDropdown>
           </Nav>
         </Collapse>
       </Container>
