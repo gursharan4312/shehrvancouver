@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import Header from "./Header";
 import Footer from "./Footer";
 import "./css/bootstrap.min.css";
+import "./css/layout.scss";
 
 function Layout({ children }) {
   return (
@@ -15,8 +16,10 @@ function Layout({ children }) {
           crossorigin="anonymous"
         />
       </Helmet>
-      <Header />
-      <main>{children}</main>
+      <div>
+        <Header />
+        <main>{children}</main>
+      </div>
       <Footer />
     </div>
   );
