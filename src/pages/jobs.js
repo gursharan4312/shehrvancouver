@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Layout from "../components/Layout";
 import JobList from "../components/JobList";
 import { Container, Row } from "reactstrap";
 
 function Jobs() {
-  const [jobs, setJobs] = useState([
+  const jobs = [
     {
       name: "Job 1",
       description: "This is the description of first job",
@@ -27,7 +27,7 @@ function Jobs() {
       location: "surrey",
       email: "sample@example.com",
     },
-  ]);
+  ];
   return (
     <Layout>
       <Container
