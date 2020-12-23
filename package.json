@@ -12,10 +12,13 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "lambda-serve": "netlify-lambda serve functions",
+    "lambda-build": "netlify-lambda build functions"
   },
   "license": "0BSD",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "gatsby": "^2.26.1",
     "gatsby-plugin-image": "^0.3.1",
     "gatsby-plugin-netlify-cms": "^4.6.0",
@@ -24,7 +27,9 @@
     "gatsby-plugin-sitemap": "^2.8.0",
     "gatsby-source-filesystem": "^2.7.0",
     "gatsby-transformer-sharp": "^2.8.0",
+    "mongoose": "^5.11.8",
     "netlify-cms-app": "^2.14.4",
+    "netlify-lambda": "^2.0.2",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

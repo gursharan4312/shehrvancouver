@@ -4,11 +4,14 @@ import { Container, Button, Form, FormGroup, Label, Input } from "reactstrap";
 
 function Confession() {
   const [message, setMessage] = useState("");
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(message);
     setMessage("");
   };
+
   return (
     <Layout>
       <Container>
