@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import Carousel from "../components/Carousel";
 import { Col, Container, Row } from "reactstrap";
 import "../components/css/homePage.scss";
+import Galllery from "../components/Galllery";
 
 function index() {
   return (
@@ -23,7 +24,7 @@ function index() {
             or need help in finding jobs.
           </p>
         </Row>
-        <Row className="action-buttons">
+        <Row className="action-buttons mb-5">
           <Col
             className="btn btn-warning  mx-2 text-center py-5"
             onClick={() => navigate("/confession")}
@@ -43,6 +44,7 @@ function index() {
             Accomodations
           </Col>
         </Row>
+        <Galllery />
       </Container>
     </Layout>
   );
