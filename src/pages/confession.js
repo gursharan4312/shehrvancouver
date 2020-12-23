@@ -1,14 +1,24 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
 import { Container, Button, Form, FormGroup, Label, Input } from "reactstrap";
+import Axios from "axios";
 
 function Confession() {
   const [message, setMessage] = useState("");
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(message);
+    const { data } = await Axios.post("/.netlify/functions/confessions", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: {
+        message,
+      },
+    });
+    console.log(data);
+
     setMessage("");
   };
 
