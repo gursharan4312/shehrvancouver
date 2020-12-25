@@ -7,7 +7,7 @@ const uri = process.env.DB_URL;
 exports.handler = async (event, context) => {
   context.callbackWaitsForEmptyEventLoop = false;
   if (conn == null) {
-    conn.mongoose.createConnection(uri, {
+    conn = mongoose.createConnection(uri, {
       bufferCommands: false,
       bufferMaxEntries: 0,
     });
