@@ -1,24 +1,38 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
-import { Container, Button, Form, FormGroup, Label, Input } from "reactstrap";
+import {
+  Container,
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  Alert,
+} from "reactstrap";
 import Axios from "axios";
 
 function Confession() {
   const [message, setMessage] = useState("");
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [sending, setSending] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { data } = await Axios.post("/.netlify/functions/confessions", {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: {
-        message,
-      },
-    });
-    console.log(data);
-
+    setSending(true);
+    try {
+      await Axios.post("/.netlify/functions/confessions", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: {
+          message,
+        },
+      });
+      setSuccess(true);
+    } catch (e) {
+      setError(true);
+    }
+    setSending(false);
     setMessage("");
   };
 
@@ -39,9 +53,28 @@ function Confession() {
               value={message}
             />
           </FormGroup>
-          <Button size="lg" color="info">
-            Submit
-          </Button>
+          <div className="d-flex justify-content-start align-items-center">
+            <Button size="lg" color="info">
+              Submit
+              {sending && (
+                <div className="lds-facebook">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              )}
+            </Button>
+            {success && (
+              <Alert color="success" className="m-2 flex-grow-1">
+                Message sent
+              </Alert>
+            )}
+            {error && (
+              <Alert color="danger" className="m-2 flex-grow-1">
+                Something went wrong please try again later
+              </Alert>
+            )}
+          </div>
         </Form>
       </Container>
     </Layout>
