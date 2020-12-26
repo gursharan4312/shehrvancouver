@@ -21,12 +21,7 @@ function Confession() {
     setSending(true);
     try {
       await Axios.post("/.netlify/functions/confessions", {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: {
-          message,
-        },
+        message: message,
       });
       setSuccess(true);
     } catch (e) {
