@@ -17,7 +17,7 @@ exports.handler = async (event, context) => {
       new mongoose.Schema({
         message: String,
         date: Date,
-        expire_at: { type: Date, default: Date.now, expires: 60 * 60 },
+        expire_at: { type: Date, default: Date.now, expires: 3600 },
       })
     );
   }
@@ -57,5 +57,8 @@ exports.handler = async (event, context) => {
       };
     }
   }
+  response.headers = {
+    "Access-Control-Allow-Origin": "*",
+  };
   return response;
 };
