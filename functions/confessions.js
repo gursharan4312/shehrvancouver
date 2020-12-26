@@ -17,6 +17,7 @@ exports.handler = async (event, context) => {
       new mongoose.Schema({
         message: String,
         date: Date,
+        expire_at: { type: Date, default: Date.now, expires: 60 },
       })
     );
   }
