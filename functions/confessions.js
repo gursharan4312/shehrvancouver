@@ -54,7 +54,7 @@ exports.handler = async (event, context) => {
       let data = {
         confessions,
         page,
-        pages: Math.ceil(totalConfessions / 10),
+        pages: Math.ceil(totalConfessions / 10) || 1,
       };
       response = {
         statusCode: 200,
