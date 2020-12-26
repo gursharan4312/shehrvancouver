@@ -19,9 +19,11 @@ function Confession() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
+    setError(false);
+    setSuccess(false);
     try {
       await Axios.post("/.netlify/functions/confessions", {
-        message: message,
+        message,
       });
       setSuccess(true);
     } catch (e) {
