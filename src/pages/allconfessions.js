@@ -1,19 +1,38 @@
 import React, { useState, useEffect } from "react";
-import { Container } from "reactstrap";
+import { Col, Container, ListGroup, ListGroupItem } from "reactstrap";
 import Layout from "../components/Layout";
-import Axios from "axios";
 import axios from "axios";
 
-function allconfessions() {
+function Allconfessions() {
   const [confessions, setConfessions] = useState([]);
+  const [pageNum, setPageNum] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+
   useEffect(() => {
-    const { data } = axios.get("/.netlify/functions/confessions");
+    const getData = async () => {
+      const { data } = await axios.get(
+        `https://shehrvancouver.netlify.app/.netlify/functions/confessions?page=${pageNum}`
+      );
+      setTotalPages(data.pages);
+      setConfessions([...data.confessions]);
+    };
+    getData();
   }, []);
+
   return (
     <Layout>
-      <Container></Container>
+      <Container className="py-4">
+        <h1>All Confessions</h1>
+        <ListGroup flush style={{ background: "#fff" }}>
+          {confessions.map((confession) => (
+            <ListGroupItem key={confession._id} className="my-4 py-4">
+              {confession.message}
+            </ListGroupItem>
+          ))}
+        </ListGroup>
+      </Container>
     </Layout>
   );
 }
 
-export default allconfessions;
+export default Allconfessions;

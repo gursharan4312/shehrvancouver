@@ -45,10 +45,20 @@ exports.handler = async (event, context) => {
     }
   } else if (event.httpMethod === "GET") {
     try {
-      let confessions = await ConfessionModel.find({});
+      let page = event.queryStringParameters.page || 1;
+      let totalConfessions = await ConfessionModel.countDocuments();
+      let confessions = await ConfessionModel.find({})
+        .limit(10)
+        .skip((page - 1) * 10);
+
+      let data = {
+        confessions,
+        page,
+        pages: Math.ceil(totalConfessions / 10),
+      };
       response = {
         statusCode: 200,
-        body: JSON.stringify(confessions),
+        body: JSON.stringify(data),
       };
     } catch (err) {
       response = {
