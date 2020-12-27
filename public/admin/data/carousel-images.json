@@ -1,0 +1,10 @@
+{
+  "carousel images": [
+    {
+      "image": "/static/carousel1.jpg"
+    },
+    {
+      "image": "/static/carousel2.jpg"
+    }
+  ]
+}
