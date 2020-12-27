@@ -40,3 +40,14 @@ collections:
             collapsed: true
             fields:
               - { label: "Image", name: "image", widget: "image" }
+      - label: "Jobs"
+        name: "Jobs"
+        file: "public/admin/data/jobs.json"
+        fields:
+          - name: Jobs
+            label: jobs
+            label_singular: job
+            widget: list
+            collapsed: true
+            fields:
+              - { label: "jon", name: "job", widget: "jobwidget" }
