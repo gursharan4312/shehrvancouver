@@ -9,43 +9,34 @@ collections:
   - label: "Site Data"
     name: "site data"
     files:
-      - label: "categories"
-        label_singular: "category"
-        name: "categories"
-        file: "public/admin/data/categories.json"
+      - label: "carousel images"
+        label_singular: "carousel image"
+        name: "carousel images"
+        file: "public/admin/data/carousel-images.json"
         fields:
-          - name: categories
-            label: Categoriesconfig chane
-            label_singular: category
+          - name: carousel images
+            label: images
+            label_singular: image
             widget: list
             collapsed: true
             fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Featured Image", name: "thumbnail", widget: "image" }
-              - {
-                  label: "Images",
-                  name: "images",
-                  widget: "list",
-                  field: { label: "Image", name: "image", widget: "image" },
-                }
-      - label: "homepage images"
-        name: "homepage images"
-        file: "public/admin/data/heroImages.json"
+              - { label: "Image", name: "image", widget: "image" }
+      - label: "About Us"
+        name: "about us"
+        file: "public/admin/data/aboutus.json"
         fields:
-          - name: images
+          - name: about us
+            label: About Us
+            widget: markdown
+      - label: "Gallery Images"
+        label_singular: "Gallery Image"
+        name: "Gallery Images"
+        file: "public/admin/data/gallery-images.json"
+        fields:
+          - name: gallery images
             label: images
+            label_singular: image
             widget: list
             collapsed: true
-            field: { label: "Image", name: "image", widget: "image" }
-      - label: "profile details"
-        name: "profile details"
-        file: "public/admin/data/profile.json"
-        fields:
-          - { label: "Header", name: "header", widget: "text" }
-          - { label: "Details", name: "details", widget: "text" }
-          - { label: "Image", name: "image", widget: "image" }
-          # - name: profile
-          #   label: profile
-          #   widget: object
-          #   collapsed: true
-          #   field:
+            fields:
+              - { label: "Image", name: "image", widget: "image" }

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import {
-  Col,
   Container,
   ListGroup,
   ListGroupItem,
@@ -49,17 +48,17 @@ function Allconfessions({ location }) {
           ))}
         </ListGroup>
         <Pagination aria-label="Page navigation" className="mt-5">
-          <PaginationItem disabled={pageNum == 1}>
+          <PaginationItem disabled={pageNum === 1}>
             <PaginationLink first href="/allconfessions?page=1" />
           </PaginationItem>
-          <PaginationItem disabled={pageNum == 1}>
+          <PaginationItem disabled={pageNum === 1}>
             <PaginationLink
               previous
               href={`/allconfessions?page=${pageNum - 1}`}
             />
           </PaginationItem>
           {[...Array(totalPages).keys()].map((page) => (
-            <PaginationItem key={page + 1} active={pageNum == page + 1}>
+            <PaginationItem key={page + 1} active={pageNum === page + 1}>
               <PaginationLink href={`/allconfessions?page=${page + 1}`}>
                 {page + 1}
               </PaginationLink>
