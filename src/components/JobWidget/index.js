@@ -63,8 +63,8 @@ export default class JobWidgetControl extends React.Component {
     return (
       <>
         <Helmet>
-          <link rel="stylesheet" href="/static/bootstrap.min.css" />
-          <link rel="stylesheet" href="/static/jobDetails.css" />
+          <link rel="stylesheet" href="/static/adminFiles/bootstrap.min.css" />
+          <link rel="stylesheet" href="/static/adminFiles/jobDetails.css" />
         </Helmet>
         <Container
           className="py-5 position-relative"
