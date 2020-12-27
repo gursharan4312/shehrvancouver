@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "138d83e36c839dc3382f";
+/******/ 	var hotCurrentHash = "d58a70b602066ef638b4";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -859,6 +859,24 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _inheritsLoose; });
+function _inheritsLoose(subClass, superClass) {
+  subClass.prototype = Object.create(superClass.prototype);
+  subClass.prototype.constructor = subClass;
+  subClass.__proto__ = superClass;
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/interopRequireDefault.js ***!
@@ -1613,6 +1631,41 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./node_modules/webpack/buildin/harmony-module.js":
+/*!*******************************************!*\
+  !*** (webpack)/buildin/harmony-module.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(originalModule) {
+	if (!originalModule.webpackPolyfill) {
+		var module = Object.create(originalModule);
+		// module.parent = undefined by default
+		if (!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function() {
+				return module.i;
+			}
+		});
+		Object.defineProperty(module, "exports", {
+			enumerable: true
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/webpack/buildin/module.js":
 /*!***********************************!*\
   !*** (webpack)/buildin/module.js ***!
@@ -1646,15 +1699,129 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./src/cms/cms.js":
+/*!************************!*\
+  !*** ./src/cms/cms.js ***!
+  \************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var netlify_cms_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! netlify-cms-app */ "netlify-cms-app");
+/* harmony import */ var netlify_cms_app__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(netlify_cms_app__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_JobWidget__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/JobWidget */ "./src/components/JobWidget/index.js");
+var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default.signature : function (a) {
+  return a;
+};
+
+
+
+netlify_cms_app__WEBPACK_IMPORTED_MODULE_0___default.a.registerWidget("jobwidget", _components_JobWidget__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+/***/ }),
+
+/***/ "./src/components/JobWidget/index.js":
+/*!*******************************************!*\
+  !*** ./src/components/JobWidget/index.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return JobWidgetControl; });
+/* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inheritsLoose */ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+var _jsxFileName = "/home/garry/projects/shehrvancouver/shehrvancouver/src/components/JobWidget/index.js";
+
+(function () {
+  var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
+  enterModule && enterModule(module);
+})();
+
+var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default.signature : function (a) {
+  return a;
+};
+
+
+
+var JobWidgetControl = /*#__PURE__*/function (_PureComponent) {
+  Object(_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(JobWidgetControl, _PureComponent);
+
+  function JobWidgetControl() {
+    var _this;
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _PureComponent.call.apply(_PureComponent, [this].concat(args)) || this;
+
+    _this.onChange = function (event, editor) {//   const data = editor.getData();
+      //   this.props.onChange(data);
+    };
+
+    return _this;
+  }
+
+  var _proto = JobWidgetControl.prototype;
+
+  _proto.render = function render() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 9,
+        columnNumber: 12
+      }
+    }, "Job widget test");
+  };
+
+  // @ts-ignore
+  _proto.__reactstandin__regenerateByEval = function __reactstandin__regenerateByEval(key, code) {
+    // @ts-ignore
+    this[key] = eval(code);
+  };
+
+  return JobWidgetControl;
+}(react__WEBPACK_IMPORTED_MODULE_1__["PureComponent"]);
+
+
+;
+
+(function () {
+  var reactHotLoader = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default : undefined;
+
+  if (!reactHotLoader) {
+    return;
+  }
+
+  reactHotLoader.register(JobWidgetControl, "JobWidgetControl", "/home/garry/projects/shehrvancouver/shehrvancouver/src/components/JobWidget/index.js");
+})();
+
+;
+
+(function () {
+  var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
+  leaveModule && leaveModule(module);
+})();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
+
+/***/ }),
+
 /***/ 0:
-/*!**********************************************************************************************************************!*\
-  !*** multi ./node_modules/gatsby-plugin-netlify-cms/cms.js ./node_modules/gatsby-plugin-netlify-cms/cms-identity.js ***!
-  \**********************************************************************************************************************/
+/*!***************************************************************************************************************************************!*\
+  !*** multi ./node_modules/gatsby-plugin-netlify-cms/cms.js ./node_modules/gatsby-plugin-netlify-cms/cms-identity.js ./src/cms/cms.js ***!
+  \***************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /home/garry/projects/shehrvancouver/shehrvancouver/node_modules/gatsby-plugin-netlify-cms/cms.js */"./node_modules/gatsby-plugin-netlify-cms/cms.js");
-module.exports = __webpack_require__(/*! /home/garry/projects/shehrvancouver/shehrvancouver/node_modules/gatsby-plugin-netlify-cms/cms-identity.js */"./node_modules/gatsby-plugin-netlify-cms/cms-identity.js");
+__webpack_require__(/*! /home/garry/projects/shehrvancouver/shehrvancouver/node_modules/gatsby-plugin-netlify-cms/cms-identity.js */"./node_modules/gatsby-plugin-netlify-cms/cms-identity.js");
+module.exports = __webpack_require__(/*! /home/garry/projects/shehrvancouver/shehrvancouver/src/cms/cms.js */"./src/cms/cms.js");
 
 
 /***/ }),
@@ -1678,6 +1845,17 @@ module.exports = NetlifyCmsApp;
 /***/ (function(module, exports) {
 
 module.exports = netlifyIdentity;
+
+/***/ }),
+
+/***/ "react":
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = React;
 
 /***/ })
 

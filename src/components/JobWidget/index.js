@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-export class JobWidgetControl extends PureComponent {
+export default class JobWidgetControl extends PureComponent {
   onChange = (event, editor) => {
     //   const data = editor.getData();
     //   this.props.onChange(data);
