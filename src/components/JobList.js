@@ -8,14 +8,16 @@ import {
   CardSubtitle,
   Button,
 } from "reactstrap";
+import AddNewJob from "./AddNewJob";
 import JobDetails from "./JobDetails";
 
-function JobList({ jobs }) {
+function JobList({ jobs, admin = false, editJob, deleteJob }) {
   const [detailJobIndex, setDetailJobIndex] = useState(-1);
+  const [editJobIndex, setEditJobIndex] = useState(-1);
   return (
     <>
       {jobs.map((job, i) => (
-        <Col key={i} sm={8} md={4} lg={3} className="mx-auto my-1">
+        <Col key={i} sm={8} md={6} className="mx-auto my-1">
           <Card>
             <CardBody>
               <CardTitle tag="h5">
@@ -25,9 +27,17 @@ function JobList({ jobs }) {
                 {job.pay && `$${job.pay}`}
               </CardSubtitle>
               <CardText>{job.description.substr(0, 40)} . . . .</CardText>
-              <Button color="info" onClick={() => setDetailJobIndex(i)}>
-                Details
-              </Button>
+              <div className="d-flex justify-content-between align-items-center">
+                <Button color="info" onClick={() => setDetailJobIndex(i)}>
+                  Details
+                </Button>
+                {admin && (
+                  <Button color="info" onClick={() => setEditJobIndex(i)}>
+                    Edit
+                  </Button>
+                )}
+                {admin && <Button color="danger">Delete</Button>}
+              </div>
             </CardBody>
           </Card>
         </Col>
@@ -36,6 +46,13 @@ function JobList({ jobs }) {
         <JobDetails
           job={jobs[detailJobIndex]}
           setDetailJobIndex={setDetailJobIndex}
+        />
+      )}
+      {admin && editJobIndex !== -1 && (
+        <AddNewJob
+          jobDetails={jobs[editJobIndex]}
+          editJob={editJob}
+          toggleAddNewJob={() => setEditJobIndex(-1)}
         />
       )}
     </>

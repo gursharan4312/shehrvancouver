@@ -1,0 +1,1 @@
+{"version":3,"file":"cms.fde203a1c5c8c0a3bf8c.hot-update.js","sources":["webpack:///./src/cms/cms.js"],"sourcesContent":["import CMS from \"netlify-cms-app\";\nimport JobWidgetControl from \"../components/JobWidget\";\n\nCMS.registerWidget(\"jobwidget\", JobWidgetControl);\n"],"mappings":";;;;;;;;;;;;;;;;;;AAAA;AACA;AAEA;;;;A","sourceRoot":""}

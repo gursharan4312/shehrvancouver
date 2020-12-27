@@ -45,9 +45,6 @@ collections:
         file: "public/admin/data/jobs.json"
         fields:
           - name: Jobs
-            label: jobs
-            label_singular: job
-            widget: list
-            collapsed: true
-            fields:
-              - { label: "jon", name: "job", widget: "jobwidget" }
+            label: Jobs
+            label_singular: Job
+            widget: jobwidget

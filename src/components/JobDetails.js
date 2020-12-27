@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Container, ListGroup, ListGroupItem } from "reactstrap";
-import "./css/jobDetails.scss";
+import "./css/jobDetails.css";
 
 function JobDetails({ job, setDetailJobIndex }) {
   const { name, description, pay, location, email, phoneNumber } = job;
