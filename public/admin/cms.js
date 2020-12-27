@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "1ad9f254e994b0799ba5";
+/******/ 	var hotCurrentHash = "222d5651b23a003c6677";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -22994,7 +22994,7 @@ var JobWidgetControl = /*#__PURE__*/function (_React$Component) {
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("link", {
       rel: "stylesheet",
-      href: "/admin/data/bootstrap.min.css",
+      href: "/static/bootstrap.min.css",
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -23003,7 +23003,7 @@ var JobWidgetControl = /*#__PURE__*/function (_React$Component) {
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("link", {
       rel: "stylesheet",
-      href: "/admin/data/jobDetails.css",
+      href: "/static/jobDetails.css",
       __self: this,
       __source: {
         fileName: _jsxFileName,
