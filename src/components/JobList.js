@@ -26,7 +26,9 @@ function JobList({ jobs, admin = false, editJob, deleteJob }) {
               <CardSubtitle tag="h6" className="mb-2 text-muted">
                 {job.pay && `$${job.pay}`}
               </CardSubtitle>
-              <CardText>{job.description.substr(0, 40)} . . . .</CardText>
+              <CardText>
+                {job.description && job.description.substr(0, 40)} . . . .
+              </CardText>
               <div className="d-flex justify-content-between align-items-center">
                 <Button color="info" onClick={() => setDetailJobIndex(i)}>
                   Details
