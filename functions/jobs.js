@@ -16,30 +16,41 @@ exports.handler = async (event, context) => {
     });
     await conn;
     conn.model(
-      "Confession",
+      "Job",
       new mongoose.Schema({
-        message: String,
-        date: Date,
-        expire_at: { type: Date, default: Date.now, expires: "10080m" },
+        name: String,
+        description: String,
+        pay: Number,
+        location: String,
+        email: String,
+        phoneNumber: Number,
+        expire_at: { type: Date, default: Date.now, expires: "20160m" },
       })
     );
   }
-  const ConfessionModel = conn.model("Confession");
+  const JobModel = conn.model("Job");
   let response;
   if (event.httpMethod === "POST") {
-    const { message } = JSON.parse(event.body);
-
-    const newConfession = new ConfessionModel({
-      message,
+    const { name, description, pay, location, email, phoneNumber } = JSON.parse(
+      event.body
+    );
+    const newjob = new JobModel({
+      name,
+      pay,
+      email,
+      phoneNumber,
+      location,
+      description,
       date: new Date(),
     });
 
     try {
-      await newConfession.save();
+      await newjob.save();
       response = {
         statusCode: 200,
-        body: "Confession added!!",
+        body: "job added!!",
       };
+      console.log("saved");
     } catch (err) {
       response = {
         statusCode: 500,
@@ -49,15 +60,15 @@ exports.handler = async (event, context) => {
   } else if (event.httpMethod === "GET") {
     try {
       let page = event.queryStringParameters.page || 1;
-      let totalConfessions = await ConfessionModel.countDocuments();
-      let confessions = await ConfessionModel.find({})
+      let totaljobs = await JobModel.countDocuments();
+      let jobs = await JobModel.find({})
         .limit(10)
         .skip((page - 1) * 10);
 
       let data = {
-        confessions,
+        jobs,
         page,
-        pages: Math.ceil(totalConfessions / 10) || 1,
+        pages: Math.ceil(totaljobs / 10) || 1,
       };
       response = {
         statusCode: 200,
@@ -66,7 +77,7 @@ exports.handler = async (event, context) => {
     } catch (err) {
       response = {
         statusCode: 500,
-        body: JSON.stringify(err),
+        body: "Something went wrong try again!!",
       };
     }
   }

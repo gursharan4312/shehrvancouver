@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "e20206bbbd5bad916158";
+/******/ 	var hotCurrentHash = "a164fcdca89258228285";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -22160,6 +22160,24 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./src/cms/admin.css":
+/*!***************************!*\
+  !*** ./src/cms/admin.css ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+    if(true) {
+      // 1609135048978
+      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.i, {"hmr":true,"locals":false});
+      module.hot.dispose(cssReload);
+      module.hot.accept(undefined, cssReload);
+    }
+  
+
+/***/ }),
+
 /***/ "./src/cms/cms.js":
 /*!************************!*\
   !*** ./src/cms/cms.js ***!
@@ -22172,9 +22190,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var netlify_cms_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! netlify-cms-app */ "netlify-cms-app");
 /* harmony import */ var netlify_cms_app__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(netlify_cms_app__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_JobWidget__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/JobWidget */ "./src/components/JobWidget/index.js");
+/* harmony import */ var _admin_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./admin.css */ "./src/cms/admin.css");
+/* harmony import */ var _admin_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_admin_css__WEBPACK_IMPORTED_MODULE_2__);
 var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default.signature : function (a) {
   return a;
 };
+
 
 
 
@@ -23124,7 +23145,7 @@ var JobWidgetControl = /*#__PURE__*/function (_React$Component) {
 
 // extracted by mini-css-extract-plugin
     if(true) {
-      // 1609053702032
+      // 1609135052605
       var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.i, {"hmr":true,"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);

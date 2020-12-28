@@ -16,29 +16,44 @@ exports.handler = async (event, context) => {
     });
     await conn;
     conn.model(
-      "Confession",
+      "Accomodation",
       new mongoose.Schema({
-        message: String,
-        date: Date,
-        expire_at: { type: Date, default: Date.now, expires: "10080m" },
+        address: String,
+        description: String,
+        rent: Number,
+        furnished: String,
+        email: String,
+        phoneNumber: Number,
+        expire_at: { type: Date, default: Date.now, expires: "20160m" },
       })
     );
   }
-  const ConfessionModel = conn.model("Confession");
+  const AccomodationModel = conn.model("Accomodation");
   let response;
   if (event.httpMethod === "POST") {
-    const { message } = JSON.parse(event.body);
-
-    const newConfession = new ConfessionModel({
-      message,
+    const {
+      address,
+      description,
+      rent,
+      furnished,
+      email,
+      phoneNumber,
+    } = JSON.parse(event.body);
+    const newAccomodation = new AccomodationModel({
+      address,
+      description,
+      rent,
+      furnished,
+      email,
+      phoneNumber,
       date: new Date(),
     });
 
     try {
-      await newConfession.save();
+      await newAccomodation.save();
       response = {
         statusCode: 200,
-        body: "Confession added!!",
+        body: "Accomodation added!!",
       };
     } catch (err) {
       response = {
@@ -49,15 +64,15 @@ exports.handler = async (event, context) => {
   } else if (event.httpMethod === "GET") {
     try {
       let page = event.queryStringParameters.page || 1;
-      let totalConfessions = await ConfessionModel.countDocuments();
-      let confessions = await ConfessionModel.find({})
+      let totalAccomodations = await AccomodationModel.countDocuments();
+      let accomodations = await AccomodationModel.find({})
         .limit(10)
         .skip((page - 1) * 10);
 
       let data = {
-        confessions,
+        accomodations,
         page,
-        pages: Math.ceil(totalConfessions / 10) || 1,
+        pages: Math.ceil(totalAccomodations / 10) || 1,
       };
       response = {
         statusCode: 200,
@@ -66,7 +81,7 @@ exports.handler = async (event, context) => {
     } catch (err) {
       response = {
         statusCode: 500,
-        body: JSON.stringify(err),
+        body: "Something went wrong try again!!",
       };
     }
   }
