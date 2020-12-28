@@ -46,5 +46,11 @@ collections:
         fields:
           - name: Jobs
             label: Jobs
-            label_singular: Job
             widget: jobwidget
+      - label: "Confessions"
+        name: "Confessions"
+        file: "public/admin/data/confessions.json"
+        fields:
+          - name: Confessions
+            label: Confessions
+            widget: allConfessions

@@ -70,3 +70,5 @@ yarn-error.log
 .yarn-integrity
 
 *.hot-update.json
+*.hot-update.js
+*.hot-update.js.map
