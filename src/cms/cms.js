@@ -1,6 +1,6 @@
 import CMS from "netlify-cms-app";
-import JobWidgetControl from "../components/JobWidget";
-import Allconfessions from "../components/allConfessionWidget";
+import JobWidgetControl from "./JobWidget";
+import Allconfessions from "./allConfessionWidget";
 import "./admin.css";
 
 CMS.registerWidget("jobwidget", JobWidgetControl);
