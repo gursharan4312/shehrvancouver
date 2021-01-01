@@ -9,9 +9,9 @@ collections:
   - label: "carousel images"
     label_singular: "carousel image"
     name: "carousel images"
-    file: "static/data/carousel-images.json"
-    fields:
+    files:
       - name: carousel images
+        file: "static/data/carousel-images.json"
         label: images
         label_singular: image
         widget: list
@@ -20,17 +20,19 @@ collections:
           - { label: "Image", name: "image", widget: "image" }
   - label: "About Us"
     name: "about us"
-    file: "static/data/aboutus.json"
-    fields:
+    files:
       - name: about us
+        file: "static/data/aboutus.json"
         label: About Us
-        widget: markdown
+        fields:
+          - { name: "About Us", widget: markdown }
+
   - label: "Gallery Images"
     label_singular: "Gallery Image"
     name: "Gallery Images"
-    file: "static/data/gallery-images.json"
-    fields:
+    files:
       - name: gallery images
+        file: "static/data/gallery-images.json"
         label: images
         label_singular: image
         widget: list
@@ -39,18 +41,20 @@ collections:
           - { label: "Image", name: "image", widget: "image" }
   - label: "Jobs"
     name: "Jobs"
-    file: "static/data/jobs.json"
-    fields:
+    files:
       - name: Jobs
+        file: "static/data/jobs.json"
         label: Jobs
-        widget: jobwidget
+        fields:
+          - { name: "Jobs", widget: jobwidget }
   - label: "Confessions"
     name: "Confessions"
-    file: "static/data/confessions.json"
-    fields:
+    files:
       - name: Confessions
+        file: "static/data/confessions.json"
         label: Confessions
-        widget: allConfessions
+        fields:
+          - { name: "Confessions", widget: allConfessions }
   - label: "Site Data"
     name: "site data"
     files:
