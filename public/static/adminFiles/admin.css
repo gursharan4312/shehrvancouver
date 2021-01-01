@@ -1,13 +1,15 @@
-@media (max-width: 799px) {
+@media screen and (max-width: 981px) {
   .css-1gj57a0-SidebarContainer-card {
     position: static;
     width: 100%;
     margin-bottom: 30px;
   }
-  .css-v758ki-AppMainContainer, .css-12b66la-AppHeaderContent {
+  .css-v758ki-AppMainContainer,
+  .css-12b66la-AppHeaderContent {
     min-width: 0;
   }
-  .css-104dqk8-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton,.css-12yqrwa-AppHeaderNavLink-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton {
+  .css-104dqk8-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton,
+  .css-12yqrwa-AppHeaderNavLink-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton {
     margin: 0;
     padding: 16px 7px;
   }
@@ -17,7 +19,7 @@
   .css-1hvrgvd-CollectionTopContainer-card-cardTop {
     width: 100%;
   }
-/*missing start*/
+  /*missing start*/
   .css-16b5p1f-ToolbarSectionMain-toolbarSection {
     flex-direction: column;
     justify-content: space-evenly;
@@ -28,7 +30,7 @@
     padding: 15px;
     grid-template-rows: 190px auto;
   }
-/*missing ends*/
+  /*missing ends*/
   .css-6fxb8u-SearchContainer {
     display: block;
     width: 100%;
@@ -37,12 +39,12 @@
   .css-14rl9f4-LibraryTop {
     flex-direction: column;
   }
-/*missing start*/
+  /*missing start*/
   .css-3ifd9s-ActionsContainer {
     text-align: center;
   }
-/*done*/
-  .css-1ih1y1j-LibraryTitle{
+  /*done*/
+  .css-1ih1y1j-LibraryTitle {
     margin-bottom: 15px;
   }
   .css-2ptjc9-UpperActionsContainer {
@@ -68,7 +70,7 @@
     display: inline-block;
     margin-top: 0;
   }
-  .css-stmjdx-CardGridContainer  {
+  .css-stmjdx-CardGridContainer {
     position: static;
     overflow: visible;
     width: 100%;
