@@ -33,6 +33,7 @@ function Allconfessions() {
     <Container className="py-4">
       <Helmet>
         <link rel="stylesheet" href="/static/adminFiles/bootstrap.min.css" />
+        <link rel="stylesheet" href="/static/adminFiles/admin.css" />
       </Helmet>
       {loading ? (
         <h1>Loading...</h1>
