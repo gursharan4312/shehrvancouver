@@ -6,62 +6,13 @@ media_folder: "/static/media"
 public_folder: "/static"
 
 collections:
-  - label: "carousel images"
-    label_singular: "carousel image"
-    name: "carousel images"
-    files:
-      - name: carousel images
-        file: "static/data/carousel-images.json"
-        label: images
-        label_singular: image
-        widget: list
-        collapsed: true
-        fields:
-          - { label: "Image", name: "image", widget: "image" }
-  - label: "About Us"
-    name: "about us"
-    files:
-      - name: about us
-        file: "static/data/aboutus.json"
-        label: About Us
-        fields:
-          - { name: "About Us", widget: markdown }
-
-  - label: "Gallery Images"
-    label_singular: "Gallery Image"
-    name: "Gallery Images"
-    files:
-      - name: gallery images
-        file: "static/data/gallery-images.json"
-        label: images
-        label_singular: image
-        widget: list
-        collapsed: true
-        fields:
-          - { label: "Image", name: "image", widget: "image" }
-  - label: "Jobs"
-    name: "Jobs"
-    files:
-      - name: Jobs
-        file: "static/data/jobs.json"
-        label: Jobs
-        fields:
-          - { name: "Jobs", widget: jobwidget }
-  - label: "Confessions"
-    name: "Confessions"
-    files:
-      - name: Confessions
-        file: "static/data/confessions.json"
-        label: Confessions
-        fields:
-          - { name: "Confessions", widget: allConfessions }
   - label: "Site Data"
     name: "site data"
     files:
       - label: "carousel images"
         label_singular: "carousel image"
         name: "carousel images"
-        file: "public/admin/data/carousel-images.json"
+        file: "static/data/carousel-images.json"
         fields:
           - name: carousel images
             label: images
@@ -72,7 +23,7 @@ collections:
               - { label: "Image", name: "image", widget: "image" }
       - label: "About Us"
         name: "about us"
-        file: "public/admin/data/aboutus.json"
+        file: "static/data/aboutus.json"
         fields:
           - name: about us
             label: About Us
@@ -80,7 +31,7 @@ collections:
       - label: "Gallery Images"
         label_singular: "Gallery Image"
         name: "Gallery Images"
-        file: "public/admin/data/gallery-images.json"
+        file: "static/data/gallery-images.json"
         fields:
           - name: gallery images
             label: images
@@ -91,14 +42,14 @@ collections:
               - { label: "Image", name: "image", widget: "image" }
       - label: "Jobs"
         name: "Jobs"
-        file: "public/admin/data/jobs.json"
+        file: "static/data/jobs.json"
         fields:
           - name: Jobs
             label: Jobs
             widget: jobwidget
       - label: "Confessions"
         name: "Confessions"
-        file: "public/admin/data/confessions.json"
+        file: "static/data/confessions.json"
         fields:
           - name: Confessions
             label: Confessions
