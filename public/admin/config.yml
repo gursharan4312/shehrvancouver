@@ -2,10 +2,55 @@ backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 
-media_folder: "public/static"
+media_folder: "/static/media"
 public_folder: "/static"
 
 collections:
+  - label: "carousel images"
+        label_singular: "carousel image"
+        name: "carousel images"
+        file: "static/data/carousel-images.json"
+        fields:
+          - name: carousel images
+            label: images
+            label_singular: image
+            widget: list
+            collapsed: true
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+  - label: "About Us"
+        name: "about us"
+        file: "static/data/aboutus.json"
+        fields:
+          - name: about us
+            label: About Us
+            widget: markdown
+  - label: "Gallery Images"
+        label_singular: "Gallery Image"
+        name: "Gallery Images"
+        file: "static/data/gallery-images.json"
+        fields:
+          - name: gallery images
+            label: images
+            label_singular: image
+            widget: list
+            collapsed: true
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+  - label: "Jobs"
+        name: "Jobs"
+        file: "static/data/jobs.json"
+        fields:
+          - name: Jobs
+            label: Jobs
+            widget: jobwidget
+  - label: "Confessions"
+        name: "Confessions"
+        file: "static/data/confessions.json"
+        fields:
+          - name: Confessions
+            label: Confessions
+            widget: allConfessions
   - label: "Site Data"
     name: "site data"
     files:
