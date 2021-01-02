@@ -1,4 +1,11 @@
-@media screen and (max-width: 981px) {
+@media screen and (max-width: 799px) {
+  body,
+  html {
+    width: 100vw !important;
+  }
+  canvas {
+    width: 100vw !important;
+  }
   .css-1gj57a0-SidebarContainer-card {
     position: static;
     width: 100%;
@@ -7,6 +14,7 @@
   .css-v758ki-AppMainContainer,
   .css-12b66la-AppHeaderContent {
     min-width: 0;
+    width: 100vw !important;
   }
   .css-104dqk8-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton,
   .css-12yqrwa-AppHeaderNavLink-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton {

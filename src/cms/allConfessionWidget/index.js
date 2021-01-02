@@ -32,6 +32,7 @@ function Allconfessions() {
   return (
     <Container className="py-4">
       <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="/static/adminFiles/bootstrap.min.css" />
         <link rel="stylesheet" href="/static/adminFiles/admin.css" />
       </Helmet>

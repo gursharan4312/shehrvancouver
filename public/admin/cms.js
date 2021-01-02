@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "16bd4c81cca92761e9af";
+/******/ 	var hotCurrentHash = "b9fccfb98b55a273ce3e";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -24955,7 +24955,7 @@ var JobWidgetControl = /*#__PURE__*/function (_React$Component) {
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("link", {
       rel: "stylesheet",
-      href: "/static/adminFiles/bootstrap.min.css",
+      href: "/static/adminFiles/admin.css",
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -24964,7 +24964,7 @@ var JobWidgetControl = /*#__PURE__*/function (_React$Component) {
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("link", {
       rel: "stylesheet",
-      href: "/static/adminFiles/jobDetails.css",
+      href: "/static/adminFiles/bootstrap.min.css",
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -24973,11 +24973,20 @@ var JobWidgetControl = /*#__PURE__*/function (_React$Component) {
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("link", {
       rel: "stylesheet",
-      href: "/static/adminFiles/admin.css",
+      href: "/static/adminFiles/jobDetails.css",
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 68,
+        columnNumber: 11
+      }
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("link", {
+      rel: "stylesheet",
+      href: "/static/adminFiles/admin.css",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69,
         columnNumber: 11
       }
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Container"], {
@@ -24988,7 +24997,7 @@ var JobWidgetControl = /*#__PURE__*/function (_React$Component) {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70,
+        lineNumber: 71,
         columnNumber: 9
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
@@ -24996,7 +25005,7 @@ var JobWidgetControl = /*#__PURE__*/function (_React$Component) {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74,
+        lineNumber: 75,
         columnNumber: 11
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h1", {
@@ -25004,7 +25013,7 @@ var JobWidgetControl = /*#__PURE__*/function (_React$Component) {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 75,
+        lineNumber: 76,
         columnNumber: 13
       }
     }, "List of jobs:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Button"], {
@@ -25013,14 +25022,14 @@ var JobWidgetControl = /*#__PURE__*/function (_React$Component) {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 76,
+        lineNumber: 77,
         columnNumber: 13
       }
     }, "Add new job")), this.state.jobs.length > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Row"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 82,
+        lineNumber: 83,
         columnNumber: 13
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_JobList__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -25031,14 +25040,14 @@ var JobWidgetControl = /*#__PURE__*/function (_React$Component) {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 83,
+        lineNumber: 84,
         columnNumber: 15
       }
     })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h1", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91,
+        lineNumber: 92,
         columnNumber: 13
       }
     }, "Sorry, no jobs found come back later"), this.state.addNewJob && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_AddNewJob__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -25047,7 +25056,7 @@ var JobWidgetControl = /*#__PURE__*/function (_React$Component) {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 94,
+        lineNumber: 95,
         columnNumber: 13
       }
     })));
@@ -25082,24 +25091,6 @@ var JobWidgetControl = /*#__PURE__*/function (_React$Component) {
   leaveModule && leaveModule(module);
 })();
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
-
-/***/ }),
-
-/***/ "./src/cms/admin.css":
-/*!***************************!*\
-  !*** ./src/cms/admin.css ***!
-  \***************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-    if(true) {
-      // 1609539003088
-      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.i, {"hmr":true,"locals":false});
-      module.hot.dispose(cssReload);
-      module.hot.accept(undefined, cssReload);
-    }
-  
 
 /***/ }),
 
@@ -25214,9 +25205,9 @@ function Allconfessions() {
       lineNumber: 34,
       columnNumber: 7
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
-    rel: "stylesheet",
-    href: "/static/adminFiles/bootstrap.min.css",
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("meta", {
+    name: "viewport",
+    content: "width=device-width, initial-scale=1",
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -25225,25 +25216,34 @@ function Allconfessions() {
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
     rel: "stylesheet",
-    href: "/static/adminFiles/admin.css",
+    href: "/static/adminFiles/bootstrap.min.css",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 36,
       columnNumber: 9
     }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
+    rel: "stylesheet",
+    href: "/static/adminFiles/admin.css",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37,
+      columnNumber: 9
+    }
   })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 40,
       columnNumber: 9
     }
   }, "Loading...") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_4___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 43,
       columnNumber: 11
     }
   }, "All Confessions"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["ListGroup"], {
@@ -25254,28 +25254,28 @@ function Allconfessions() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 44,
       columnNumber: 11
     }
   }, confessions.length === 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["ListGroupItem"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 46,
       columnNumber: 15
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 47,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("strong", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 48,
       columnNumber: 19
     }
   }, "No Confession Found"))), confessions.map(function (confession) {
@@ -25285,7 +25285,7 @@ function Allconfessions() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52,
+        lineNumber: 53,
         columnNumber: 15
       }
     }, confession.message);
@@ -25295,7 +25295,7 @@ function Allconfessions() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 59,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationItem"], {
@@ -25303,7 +25303,7 @@ function Allconfessions() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 60,
       columnNumber: 15
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
@@ -25314,7 +25314,7 @@ function Allconfessions() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 61,
       columnNumber: 17
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationItem"], {
@@ -25322,7 +25322,7 @@ function Allconfessions() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 63,
       columnNumber: 15
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
@@ -25333,7 +25333,7 @@ function Allconfessions() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 64,
       columnNumber: 17
     }
   })), Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(Array(totalPages).keys()).map(function (page) {
@@ -25343,7 +25343,7 @@ function Allconfessions() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69,
+        lineNumber: 70,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
@@ -25353,7 +25353,7 @@ function Allconfessions() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70,
+        lineNumber: 71,
         columnNumber: 19
       }
     }, page + 1));
@@ -25362,7 +25362,7 @@ function Allconfessions() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 76,
       columnNumber: 15
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
@@ -25373,7 +25373,7 @@ function Allconfessions() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 77,
       columnNumber: 17
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationItem"], {
@@ -25381,7 +25381,7 @@ function Allconfessions() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78,
+      lineNumber: 79,
       columnNumber: 15
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
@@ -25392,7 +25392,7 @@ function Allconfessions() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 80,
       columnNumber: 17
     }
   })))));
@@ -25438,12 +25438,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var netlify_cms_app__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(netlify_cms_app__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _JobWidget__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./JobWidget */ "./src/cms/JobWidget/index.js");
 /* harmony import */ var _allConfessionWidget__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./allConfessionWidget */ "./src/cms/allConfessionWidget/index.js");
-/* harmony import */ var _admin_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./admin.css */ "./src/cms/admin.css");
-/* harmony import */ var _admin_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_admin_css__WEBPACK_IMPORTED_MODULE_3__);
 var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default.signature : function (a) {
   return a;
 };
-
 
 
 
@@ -26158,7 +26155,7 @@ var _default = JobList;
 
 // extracted by mini-css-extract-plugin
     if(true) {
-      // 1609539007472
+      // 1609550068579
       var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.i, {"hmr":true,"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
