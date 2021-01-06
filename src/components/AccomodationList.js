@@ -9,9 +9,16 @@ import {
   Button,
 } from "reactstrap";
 import AccomodationDetails from "./AccomodationDetails";
+import AddNewAccomodation from "./AddNewAccomodation";
 
-function AccomodationList({ accomodations }) {
+function AccomodationList({
+  accomodations,
+  editAccomodation,
+  deleteAccomodation,
+  admin,
+}) {
   const [detailAccomodationIndex, setDetailAccomodationIndex] = useState(-1);
+  const [editAccomodationIndex, setEditAccomodationIndex] = useState(-1);
   return (
     <>
       {accomodations.map((accomodation, i) => (
@@ -44,6 +51,13 @@ function AccomodationList({ accomodations }) {
         <AccomodationDetails
           accomodation={accomodations[detailAccomodationIndex]}
           setDetailAccomodationIndex={setDetailAccomodationIndex}
+        />
+      )}
+      {admin && editAccomodationIndex !== -1 && (
+        <AddNewAccomodation
+          accomodationDetails={accomodations[editAccomodationIndex]}
+          editAccomodation={editAccomodation}
+          toggleAddNewAccomodation={() => setEditAccomodationIndex(-1)}
         />
       )}
     </>

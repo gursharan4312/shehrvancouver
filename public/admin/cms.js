@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "b9fccfb98b55a273ce3e";
+/******/ 	var hotCurrentHash = "17fffb9822f44595ef78";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -25094,6 +25094,262 @@ var JobWidgetControl = /*#__PURE__*/function (_React$Component) {
 
 /***/ }),
 
+/***/ "./src/cms/accomodationWidget/index.js":
+/*!*********************************************!*\
+  !*** ./src/cms/accomodationWidget/index.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
+/* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerator-runtime/runtime.js");
+/* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/es/Helmet.js");
+/* harmony import */ var _components_AccomodationList__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/AccomodationList */ "./src/components/AccomodationList.js");
+/* harmony import */ var _components_AddNewAccomodation__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/AddNewAccomodation */ "./src/components/AddNewAccomodation.js");
+
+
+
+
+var _jsxFileName = "/home/garry/projects/shehrvancouver/shehrvancouver/src/cms/accomodationWidget/index.js";
+
+(function () {
+  var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
+  enterModule && enterModule(module);
+})();
+
+var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default.signature : function (a) {
+  return a;
+};
+
+
+
+
+
+
+
+
+function Accomodations() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])([]),
+      accomodations = _useState[0],
+      setAccomodations = _useState[1];
+
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(1),
+      pageNum = _useState2[0],
+      setPageNum = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(1),
+      totalPages = _useState3[0],
+      setTotalPages = _useState3[1];
+
+  var _useState4 = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(false),
+      loading = _useState4[0],
+      setloading = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(false),
+      addNewAccomodation = _useState5[0],
+      setAddNewAccomodation = _useState5[1];
+
+  var editAccomodation = function editAccomodation() {};
+
+  var deleteAccomodation = function deleteAccomodation() {};
+
+  var addAccomodation = function addAccomodation() {};
+
+  var toggleAddNewAccomodation = function toggleAddNewAccomodation() {
+    setAddNewAccomodation(!addNewAccomodation);
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_4__["useEffect"])(function () {
+    setloading(true);
+
+    var getData = /*#__PURE__*/function () {
+      var _ref = Object(_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var _yield$axios$get, data;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_6___default.a.get("https://shehrvancouver.netlify.app/.netlify/functions/accomodations?page=" + pageNum);
+
+              case 2:
+                _yield$axios$get = _context.sent;
+                data = _yield$axios$get.data;
+                setTotalPages(data.pages);
+                setAccomodations(Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(data.accomodations));
+
+              case 6:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function getData() {
+        return _ref.apply(this, arguments);
+      };
+    }();
+
+    getData();
+    setloading(false);
+  }, [pageNum]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_4___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_7__["Helmet"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47,
+      columnNumber: 7
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
+    rel: "stylesheet",
+    href: "/static/adminFiles/admin.css",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48,
+      columnNumber: 9
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
+    rel: "stylesheet",
+    href: "/static/adminFiles/bootstrap.min.css",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49,
+      columnNumber: 9
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
+    rel: "stylesheet",
+    href: "/static/adminFiles/jobDetails.css",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50,
+      columnNumber: 9
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
+    rel: "stylesheet",
+    href: "/static/adminFiles/admin.css",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51,
+      columnNumber: 9
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Container"], {
+    className: "py-5 position-relative",
+    style: {
+      minHeight: "80vh"
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53,
+      columnNumber: 7
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", {
+    className: "d-flex justify-content-between align-items-center",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h1", {
+    className: "mb-3",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58,
+      columnNumber: 11
+    }
+  }, "List of jobs:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], {
+    color: "info",
+    onClick: toggleAddNewAccomodation,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59,
+      columnNumber: 11
+    }
+  }, "Add new")), accomodations.length > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Row"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65,
+      columnNumber: 11
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_components_AccomodationList__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    accomodations: accomodations,
+    admin: true,
+    editAccomodation: editAccomodation,
+    deleteAccomodation: deleteAccomodation,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66,
+      columnNumber: 13
+    }
+  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h1", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 74,
+      columnNumber: 11
+    }
+  }, "Sorry, no accomodations found come back later"), addNewAccomodation && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_components_AddNewAccomodation__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    accomodations: accomodations,
+    addAccomodation: addAccomodation,
+    toggleAddNewAccomodation: toggleAddNewAccomodation,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 77,
+      columnNumber: 11
+    }
+  })));
+}
+
+__signature__(Accomodations, "useState{[accomodations, setAccomodations]([])}\nuseState{[pageNum, setPageNum](1)}\nuseState{[totalPages, setTotalPages](1)}\nuseState{[loading, setloading](false)}\nuseState{[addNewAccomodation, setAddNewAccomodation](false)}\nuseEffect{}");
+
+var _default = Accomodations;
+/* harmony default export */ __webpack_exports__["default"] = (_default);
+;
+
+(function () {
+  var reactHotLoader = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default : undefined;
+
+  if (!reactHotLoader) {
+    return;
+  }
+
+  reactHotLoader.register(Accomodations, "Accomodations", "/home/garry/projects/shehrvancouver/shehrvancouver/src/cms/accomodationWidget/index.js");
+  reactHotLoader.register(_default, "default", "/home/garry/projects/shehrvancouver/shehrvancouver/src/cms/accomodationWidget/index.js");
+})();
+
+;
+
+(function () {
+  var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
+  leaveModule && leaveModule(module);
+})();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
+
+/***/ }),
+
 /***/ "./src/cms/allConfessionWidget/index.js":
 /*!**********************************************!*\
   !*** ./src/cms/allConfessionWidget/index.js ***!
@@ -25437,7 +25693,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var netlify_cms_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! netlify-cms-app */ "netlify-cms-app");
 /* harmony import */ var netlify_cms_app__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(netlify_cms_app__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _JobWidget__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./JobWidget */ "./src/cms/JobWidget/index.js");
-/* harmony import */ var _allConfessionWidget__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./allConfessionWidget */ "./src/cms/allConfessionWidget/index.js");
+/* harmony import */ var _accomodationWidget__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./accomodationWidget */ "./src/cms/accomodationWidget/index.js");
+/* harmony import */ var _allConfessionWidget__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./allConfessionWidget */ "./src/cms/allConfessionWidget/index.js");
 var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default.signature : function (a) {
   return a;
 };
@@ -25445,8 +25702,694 @@ var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoader
 
 
 
+
 netlify_cms_app__WEBPACK_IMPORTED_MODULE_0___default.a.registerWidget("jobwidget", _JobWidget__WEBPACK_IMPORTED_MODULE_1__["default"]);
-netlify_cms_app__WEBPACK_IMPORTED_MODULE_0___default.a.registerWidget("allConfessions", _allConfessionWidget__WEBPACK_IMPORTED_MODULE_2__["default"]);
+netlify_cms_app__WEBPACK_IMPORTED_MODULE_0___default.a.registerWidget("accomodationswidget", _accomodationWidget__WEBPACK_IMPORTED_MODULE_2__["default"]);
+netlify_cms_app__WEBPACK_IMPORTED_MODULE_0___default.a.registerWidget("allConfessions", _allConfessionWidget__WEBPACK_IMPORTED_MODULE_3__["default"]);
+
+/***/ }),
+
+/***/ "./src/components/AccomodationDetails.js":
+/*!***********************************************!*\
+  !*** ./src/components/AccomodationDetails.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
+/* harmony import */ var _css_jobDetails_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./css/jobDetails.css */ "./src/components/css/jobDetails.css");
+/* harmony import */ var _css_jobDetails_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_css_jobDetails_css__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/home/garry/projects/shehrvancouver/shehrvancouver/src/components/AccomodationDetails.js";
+
+(function () {
+  var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
+  enterModule && enterModule(module);
+})();
+
+var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default.signature : function (a) {
+  return a;
+};
+
+
+
+
+
+function AccomodationDetails(_ref) {
+  var accomodation = _ref.accomodation,
+      setDetailAccomodationIndex = _ref.setDetailAccomodationIndex;
+  var address = accomodation.address,
+      description = accomodation.description,
+      rent = accomodation.rent,
+      rooms = accomodation.rooms,
+      furnished = accomodation.furnished,
+      email = accomodation.email,
+      phoneNumber = accomodation.phoneNumber;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], {
+    className: "jobdetails_container",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 5
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ListGroup"], {
+    flush: true,
+    className: " py-2 mt-4 ",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 7
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ListGroupItem"], {
+    className: " overflow-auto",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    className: "mb-4",
+    onClick: function onClick() {
+      return setDetailAccomodationIndex(-1);
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 11
+    }
+  }, "back"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26,
+      columnNumber: 11
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27,
+      columnNumber: 13
+    }
+  }, address)), rooms && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29,
+      columnNumber: 21
+    }
+  }, " ", "Rooms : " + rooms), rent && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30,
+      columnNumber: 20
+    }
+  }, " ", "Rent : " + rent), furnished && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31,
+      columnNumber: 25
+    }
+  }, " ", "Furnished : " + furnished), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32,
+      columnNumber: 11
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33,
+      columnNumber: 13
+    }
+  }, "Contact Details:"), email && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 15
+    }
+  }, "Email: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "mailto:" + email,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36,
+      columnNumber: 24
+    }
+  }, email)), phoneNumber && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39,
+      columnNumber: 29
+    }
+  }, "Phone Number: ", phoneNumber)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    dangerouslySetInnerHTML: {
+      __html: description
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41,
+      columnNumber: 11
+    }
+  }))));
+}
+
+var _default = AccomodationDetails;
+/* harmony default export */ __webpack_exports__["default"] = (_default);
+;
+
+(function () {
+  var reactHotLoader = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default : undefined;
+
+  if (!reactHotLoader) {
+    return;
+  }
+
+  reactHotLoader.register(AccomodationDetails, "AccomodationDetails", "/home/garry/projects/shehrvancouver/shehrvancouver/src/components/AccomodationDetails.js");
+  reactHotLoader.register(_default, "default", "/home/garry/projects/shehrvancouver/shehrvancouver/src/components/AccomodationDetails.js");
+})();
+
+;
+
+(function () {
+  var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
+  leaveModule && leaveModule(module);
+})();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
+
+/***/ }),
+
+/***/ "./src/components/AccomodationList.js":
+/*!********************************************!*\
+  !*** ./src/components/AccomodationList.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
+/* harmony import */ var _AccomodationDetails__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AccomodationDetails */ "./src/components/AccomodationDetails.js");
+/* harmony import */ var _AddNewAccomodation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AddNewAccomodation */ "./src/components/AddNewAccomodation.js");
+var _jsxFileName = "/home/garry/projects/shehrvancouver/shehrvancouver/src/components/AccomodationList.js";
+
+(function () {
+  var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
+  enterModule && enterModule(module);
+})();
+
+var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default.signature : function (a) {
+  return a;
+};
+
+
+
+
+
+
+function AccomodationList(_ref) {
+  var _this = this;
+
+  var accomodations = _ref.accomodations,
+      editAccomodation = _ref.editAccomodation,
+      deleteAccomodation = _ref.deleteAccomodation,
+      admin = _ref.admin;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(-1),
+      detailAccomodationIndex = _useState[0],
+      setDetailAccomodationIndex = _useState[1];
+
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(-1),
+      editAccomodationIndex = _useState2[0],
+      setEditAccomodationIndex = _useState2[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, accomodations.map(function (accomodation, i) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      key: i,
+      sm: 8,
+      md: 4,
+      lg: 3,
+      className: "mx-auto my-1",
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25,
+        columnNumber: 9
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27,
+        columnNumber: 13
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardTitle"], {
+      tag: "h5",
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28,
+        columnNumber: 15
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29,
+        columnNumber: 17
+      }
+    }, accomodation.address)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardSubtitle"], {
+      tag: "h6",
+      className: "mb-2 text-muted",
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31,
+        columnNumber: 15
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 32,
+        columnNumber: 17
+      }
+    }, accomodation.rooms && accomodation.rooms + " rooms", accomodation.rent && "- $" + accomodation.rent)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardText"], {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37,
+        columnNumber: 15
+      }
+    }, accomodation.description.substr(0, 40), " . . . ."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      color: "info",
+      onClick: function onClick() {
+        return setDetailAccomodationIndex(i);
+      },
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40,
+        columnNumber: 15
+      }
+    }, "Details"))));
+  }), detailAccomodationIndex !== -1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AccomodationDetails__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    accomodation: accomodations[detailAccomodationIndex],
+    setDetailAccomodationIndex: setDetailAccomodationIndex,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51,
+      columnNumber: 9
+    }
+  }), admin && editAccomodationIndex !== -1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddNewAccomodation__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    accomodationDetails: accomodations[editAccomodationIndex],
+    editAccomodation: editAccomodation,
+    toggleAddNewAccomodation: function toggleAddNewAccomodation() {
+      return setEditAccomodationIndex(-1);
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57,
+      columnNumber: 9
+    }
+  }));
+}
+
+__signature__(AccomodationList, "useState{[detailAccomodationIndex, setDetailAccomodationIndex](-1)}\nuseState{[editAccomodationIndex, setEditAccomodationIndex](-1)}");
+
+var _default = AccomodationList;
+/* harmony default export */ __webpack_exports__["default"] = (_default);
+;
+
+(function () {
+  var reactHotLoader = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default : undefined;
+
+  if (!reactHotLoader) {
+    return;
+  }
+
+  reactHotLoader.register(AccomodationList, "AccomodationList", "/home/garry/projects/shehrvancouver/shehrvancouver/src/components/AccomodationList.js");
+  reactHotLoader.register(_default, "default", "/home/garry/projects/shehrvancouver/shehrvancouver/src/components/AccomodationList.js");
+})();
+
+;
+
+(function () {
+  var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
+  leaveModule && leaveModule(module);
+})();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
+
+/***/ }),
+
+/***/ "./src/components/AddNewAccomodation.js":
+/*!**********************************************!*\
+  !*** ./src/components/AddNewAccomodation.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
+var _jsxFileName = "/home/garry/projects/shehrvancouver/shehrvancouver/src/components/AddNewAccomodation.js";
+
+(function () {
+  var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
+  enterModule && enterModule(module);
+})();
+
+var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default.signature : function (a) {
+  return a;
+};
+
+
+
+
+function AddNewJob(_ref) {
+  var addAccomodation = _ref.addAccomodation,
+      editAccomodation = _ref.editAccomodation,
+      toggleAddNewAccomodation = _ref.toggleAddNewAccomodation,
+      _ref$accomodationDeta = _ref.accomodationDetails,
+      accomodationDetails = _ref$accomodationDeta === void 0 ? {
+    address: "",
+    rent: "",
+    furnished: "",
+    email: "",
+    phoneNumber: "",
+    description: ""
+  } : _ref$accomodationDeta;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(accomodationDetails.name),
+      address = _useState[0],
+      setAddress = _useState[1];
+
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(accomodationDetails.pay),
+      rent = _useState2[0],
+      setRent = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(accomodationDetails.location),
+      furnished = _useState3[0],
+      setFurnished = _useState3[1];
+
+  var _useState4 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(accomodationDetails.email),
+      email = _useState4[0],
+      setEmail = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(accomodationDetails.phoneNumber),
+      phoneNumber = _useState5[0],
+      setPhoneNumber = _useState5[1];
+
+  var _useState6 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(accomodationDetails.description),
+      description = _useState6[0],
+      setDescription = _useState6[1];
+
+  var submit = function submit(e) {
+    e.preventDefault();
+
+    if (accomodationDetails._id !== "") {
+      editAccomodation({
+        _id: accomodationDetails._id,
+        address: address,
+        rent: rent,
+        furnished: furnished,
+        email: email,
+        phoneNumber: phoneNumber,
+        description: description
+      });
+    } else {
+      addAccomodation({
+        address: address,
+        rent: rent,
+        furnished: furnished,
+        email: email,
+        phoneNumber: phoneNumber,
+        description: description
+      });
+    }
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], {
+    className: "jobdetails_container",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51,
+      columnNumber: 5
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    onClick: toggleAddNewAccomodation,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52,
+      columnNumber: 7
+    }
+  }, "back"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], {
+    onSubmit: submit,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53,
+      columnNumber: 7
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+    for: "jobName",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55,
+      columnNumber: 11
+    }
+  }, "Address:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+    type: "text",
+    name: "address",
+    id: "jobName",
+    placeholder: "Enter Job Name here...",
+    value: address,
+    onChange: function onChange(e) {
+      return setAddress(e.target.value);
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56,
+      columnNumber: 11
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+    for: "payRate",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66,
+      columnNumber: 11
+    }
+  }, "Monthly Rent:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+    type: "number",
+    name: "rent",
+    id: "payRate",
+    value: rent,
+    onChange: function onChange(e) {
+      return setRent(e.target.value);
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67,
+      columnNumber: 11
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+    for: "location",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 76,
+      columnNumber: 11
+    }
+  }, "Furnished:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+    type: "text",
+    name: "furnished",
+    id: "location",
+    value: furnished,
+    onChange: function onChange(e) {
+      return setFurnished(e.target.value);
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 77,
+      columnNumber: 11
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 85,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+    for: "email",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86,
+      columnNumber: 11
+    }
+  }, "Email :"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+    type: "email",
+    name: "email",
+    id: "email",
+    value: email,
+    onChange: function onChange(e) {
+      return setEmail(e.target.value);
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 87,
+      columnNumber: 11
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 95,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+    for: "phoneNumber",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 96,
+      columnNumber: 11
+    }
+  }, "Phone Number :"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+    type: "text",
+    name: "phoneNumber",
+    id: "phoneNumber",
+    value: phoneNumber,
+    onChange: function onChange(e) {
+      return setPhoneNumber(e.target.value);
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 97,
+      columnNumber: 11
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 105,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+    for: "jobDescription",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 106,
+      columnNumber: 11
+    }
+  }, "Description"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+    type: "textarea",
+    name: "description",
+    id: "jobDescription",
+    value: description,
+    onChange: function onChange(e) {
+      return setDescription(e.target.value);
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 107,
+      columnNumber: 11
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    color: "info",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 115,
+      columnNumber: 9
+    }
+  }, "Submit")));
+}
+
+__signature__(AddNewJob, "useState{[address, setAddress](accomodationDetails.name)}\nuseState{[rent, setRent](accomodationDetails.pay)}\nuseState{[furnished, setFurnished](accomodationDetails.location)}\nuseState{[email, setEmail](accomodationDetails.email)}\nuseState{[phoneNumber, setPhoneNumber](accomodationDetails.phoneNumber)}\nuseState{[description, setDescription](accomodationDetails.description)}");
+
+var _default = AddNewJob;
+/* harmony default export */ __webpack_exports__["default"] = (_default);
+;
+
+(function () {
+  var reactHotLoader = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default : undefined;
+
+  if (!reactHotLoader) {
+    return;
+  }
+
+  reactHotLoader.register(AddNewJob, "AddNewJob", "/home/garry/projects/shehrvancouver/shehrvancouver/src/components/AddNewAccomodation.js");
+  reactHotLoader.register(_default, "default", "/home/garry/projects/shehrvancouver/shehrvancouver/src/components/AddNewAccomodation.js");
+})();
+
+;
+
+(function () {
+  var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
+  leaveModule && leaveModule(module);
+})();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ }),
 
@@ -26155,7 +27098,7 @@ var _default = JobList;
 
 // extracted by mini-css-extract-plugin
     if(true) {
-      // 1609550068579
+      // 1609972660226
       var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.i, {"hmr":true,"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);

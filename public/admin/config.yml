@@ -40,13 +40,6 @@ collections:
             collapsed: true
             fields:
               - { label: "Image", name: "image", widget: "image" }
-      - label: "Jobs"
-        name: "Jobs"
-        file: "static/data/jobs.json"
-        fields:
-          - name: Jobs
-            label: Jobs
-            widget: jobwidget
       - label: "Confessions"
         name: "Confessions"
         file: "static/data/confessions.json"
@@ -54,3 +47,17 @@ collections:
           - name: Confessions
             label: Confessions
             widget: allConfessions
+      - label: "Jobs"
+        name: "Jobs"
+        file: "static/data/jobs.json"
+        fields:
+          - name: Jobs
+            label: Jobs
+            widget: jobwidget
+      - label: "Accomodations"
+        name: "Accomodations"
+        file: "static/data/accomodations.json"
+        fields:
+          - name: Accomodations
+            label: Accomodations
+            widget: accomodationswidget
