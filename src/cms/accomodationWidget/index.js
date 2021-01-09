@@ -35,7 +35,11 @@ function Accomodations() {
     ) {
       await axios.delete(
         "https://shehrvancouver.netlify.app/.netlify/functions/accomodations",
-        { id: accomodation._id }
+        {
+          data: {
+            id: accomodation._id,
+          },
+        }
       );
       alert("It has been deleted");
       getData();
@@ -85,7 +89,7 @@ function Accomodations() {
       ) : (
         <>
           <div className="d-flex justify-content-between align-items-center">
-            <h1 className="mb-3">List of jobs:</h1>
+            <h1 className="mb-3">List of Accomodations:</h1>
             <Button color="info" onClick={toggleAddNewAccomodation}>
               Add new
             </Button>

@@ -29,7 +29,10 @@ exports.handler = async (event, context) => {
     );
   }
   const AccomodationModel = conn.model("Accomodation");
-  let response;
+  let response = {
+    statusCode: 200,
+    body: "",
+  };
   if (event.httpMethod === "POST") {
     const {
       id,
@@ -102,7 +105,6 @@ exports.handler = async (event, context) => {
     }
   } else if (event.httpMethod === "DELETE") {
     const { id } = JSON.parse(event.body);
-    console.log(id);
     const accomodation = await AccomodationModel.findById(id);
     if (accomodation) {
       await accomodation.remove();
@@ -116,6 +118,18 @@ exports.handler = async (event, context) => {
         body: "Accomodation Not Found",
       };
     }
+  } else if (event.httpMethod === "OPTIONS") {
+    //enabling cors
+    const headers = {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
+    };
+    return {
+      statusCode: 200,
+      headers,
+      body: "This was a preflight call!",
+    };
   }
   response.headers = {
     "Access-Control-Allow-Origin": "*",

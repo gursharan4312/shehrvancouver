@@ -45,6 +45,12 @@ function AddNewJob({
         phoneNumber,
         description,
       });
+      setAddress("");
+      setRent("");
+      setFurnished("");
+      setEmail("");
+      setPhoneNumber("");
+      setDescription("");
     }
   };
   return (
@@ -57,7 +63,7 @@ function AddNewJob({
             type="text"
             name="address"
             id="jobName"
-            placeholder="Enter Job Name here..."
+            placeholder="Enter address here..."
             value={address}
             onChange={(e) => setAddress(e.target.value)}
           />

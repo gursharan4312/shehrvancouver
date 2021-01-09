@@ -80,6 +80,33 @@ exports.handler = async (event, context) => {
         body: "Something went wrong try again!!",
       };
     }
+  } else if (event.httpMethod === "DELETE") {
+    const { id } = JSON.parse(event.body);
+    const job = await JobModel.findById(id);
+    if (job) {
+      await job.remove();
+      response = {
+        statusCode: 200,
+        body: "Job Deleted",
+      };
+    } else {
+      response = {
+        statusCode: 404,
+        body: "Job Not Found",
+      };
+    }
+  } else if (event.httpMethod === "OPTIONS") {
+    //enabling cors
+    const headers = {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
+    };
+    return {
+      statusCode: 200,
+      headers,
+      body: "This was a preflight call!",
+    };
   }
   response.headers = {
     "Access-Control-Allow-Origin": "*",

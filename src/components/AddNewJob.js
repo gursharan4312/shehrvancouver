@@ -41,6 +41,12 @@ function AddNewJob({
         phoneNumber,
         description,
       });
+      setName("");
+      setPay("");
+      setLocation("");
+      setEmail("");
+      setPhoneNumber("");
+      setDescription("");
     }
   };
   return (
