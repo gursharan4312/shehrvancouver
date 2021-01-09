@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "f9f935a5f925914a5743";
+/******/ 	var hotCurrentHash = "cb1e2a7e0a51abea8a51";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -24915,9 +24915,7 @@ function Jobs() {
             case 0:
               setloading(true);
               _context.next = 3;
-              return axios__WEBPACK_IMPORTED_MODULE_6___default.a.post("https://shehrvancouver.netlify.app/.netlify/functions/jobs", {
-                job: job
-              });
+              return axios__WEBPACK_IMPORTED_MODULE_6___default.a.post("https://shehrvancouver.netlify.app/.netlify/functions/jobs", Object.assign({}, job));
 
             case 3:
               setloading(false);
@@ -24973,9 +24971,7 @@ function Jobs() {
               setloading(true);
               _context3.prev = 1;
               _context3.next = 4;
-              return axios__WEBPACK_IMPORTED_MODULE_6___default.a.post("https://shehrvancouver.netlify.app/.netlify/functions/jobs", {
-                job: job
-              });
+              return axios__WEBPACK_IMPORTED_MODULE_6___default.a.post("https://shehrvancouver.netlify.app/.netlify/functions/jobs", Object.assign({}, job));
 
             case 4:
               _context3.next = 8;
@@ -25375,9 +25371,7 @@ function Accomodations() {
             case 0:
               setloading(true);
               _context.next = 3;
-              return axios__WEBPACK_IMPORTED_MODULE_6___default.a.post("https://shehrvancouver.netlify.app/.netlify/functions/accomodations", {
-                accomodation: accomodation
-              });
+              return axios__WEBPACK_IMPORTED_MODULE_6___default.a.post("https://shehrvancouver.netlify.app/.netlify/functions/accomodations", Object.assign({}, accomodation));
 
             case 3:
               setloading(false);
@@ -25433,9 +25427,7 @@ function Accomodations() {
               setloading(true);
               _context3.prev = 1;
               _context3.next = 4;
-              return axios__WEBPACK_IMPORTED_MODULE_6___default.a.post("https://shehrvancouver.netlify.app/.netlify/functions/accomodations", {
-                accomodation: accomodation
-              });
+              return axios__WEBPACK_IMPORTED_MODULE_6___default.a.post("https://shehrvancouver.netlify.app/.netlify/functions/accomodations", Object.assign({}, accomodation));
 
             case 4:
               _context3.next = 8;

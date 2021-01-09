@@ -24,7 +24,7 @@ function Accomodations() {
     await axios.post(
       "https://shehrvancouver.netlify.app/.netlify/functions/accomodations",
       {
-        accomodation,
+        ...accomodation,
       }
     );
     setloading(false);
@@ -45,7 +45,7 @@ function Accomodations() {
       await axios.post(
         "https://shehrvancouver.netlify.app/.netlify/functions/accomodations",
         {
-          accomodation,
+          ...accomodation,
         }
       );
     } catch (e) {}

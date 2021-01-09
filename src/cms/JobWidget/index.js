@@ -24,7 +24,7 @@ function Jobs() {
     await axios.post(
       "https://shehrvancouver.netlify.app/.netlify/functions/jobs",
       {
-        job,
+        ...job,
       }
     );
     setloading(false);
@@ -43,7 +43,7 @@ function Jobs() {
       await axios.post(
         "https://shehrvancouver.netlify.app/.netlify/functions/jobs",
         {
-          job,
+          ...job,
         }
       );
     } catch (e) {}
