@@ -102,6 +102,7 @@ exports.handler = async (event, context) => {
     }
   } else if (event.httpMethod === "DELETE") {
     const { id } = JSON.parse(event.body);
+    console.log(id);
     const accomodation = await AccomodationModel.findById(id);
     if (accomodation) {
       await accomodation.remove();
