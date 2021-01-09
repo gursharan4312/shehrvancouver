@@ -33,7 +33,9 @@ function Jobs() {
     if (window.confirm(`Are you sure you want to delete ${job.name}?`)) {
       await axios.delete(
         "https://shehrvancouver.netlify.app/.netlify/functions/jobs",
-        { id: job._id }
+        {
+          data: { id: job._id },
+        }
       );
       alert("Deleted");
       getData();
