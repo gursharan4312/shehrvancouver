@@ -11,30 +11,6 @@ import {
 } from "reactstrap";
 
 function Jobs({ location }) {
-  // const jobs = [
-  //   {
-  //     name: "Job 1",
-  //     description: "This is the description of first job",
-  //     pay: 12,
-  //     location: "surrey",
-  //     email: "sample@example.com",
-  //   },
-  //   {
-  //     name: "Job 2",
-  //     description: "This is the description of first job",
-  //     pay: 12,
-  //     location: "surrey",
-  //     email: "sample@example.com",
-  //   },
-  //   {
-  //     name: "Job 3",
-  //     description:
-  //       "This is the description of first job This is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first job",
-  //     pay: 12,
-  //     location: "surrey",
-  //     email: "sample@example.com",
-  //   },
-  // ];
   const [jobs, setJobs] = useState([]);
   const [pageNum, setPageNum] = useState(1);
   const [totalPages, setTotalPages] = useState(1);

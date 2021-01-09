@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Button, Form, FormGroup, Label, Input } from "reactstrap";
 
 function AddNewJob({
-  addNewJob,
+  addJob,
   editJob,
   toggleAddNewJob,
   jobDetails = {
@@ -33,7 +33,7 @@ function AddNewJob({
         description,
       });
     } else {
-      addNewJob({
+      addJob({
         name,
         pay,
         location,

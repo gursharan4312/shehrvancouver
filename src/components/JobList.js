@@ -38,7 +38,11 @@ function JobList({ jobs, admin = false, editJob, deleteJob }) {
                     Edit
                   </Button>
                 )}
-                {admin && <Button color="danger">Delete</Button>}
+                {admin && (
+                  <Button color="danger" onClick={() => deleteJob(job)}>
+                    Delete
+                  </Button>
+                )}
               </div>
             </CardBody>
           </Card>

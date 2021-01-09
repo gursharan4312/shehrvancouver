@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "17fffb9822f44595ef78";
+/******/ 	var hotCurrentHash = "745d9719169eed8ebd46";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -24848,15 +24848,22 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return JobWidgetControl; });
-/* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
-/* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inheritsLoose */ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/es/Helmet.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
-/* harmony import */ var _components_JobList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/JobList */ "./src/components/JobList.js");
-/* harmony import */ var _components_AddNewJob__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/AddNewJob */ "./src/components/AddNewJob.js");
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerator-runtime/runtime.js");
+/* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/es/Helmet.js");
+/* harmony import */ var _components_JobList__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/JobList */ "./src/components/JobList.js");
+/* harmony import */ var _components_AddNewJob__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/AddNewJob */ "./src/components/AddNewJob.js");
+
+
 
 
 var _jsxFileName = "/home/garry/projects/shehrvancouver/shehrvancouver/src/cms/JobWidget/index.js";
@@ -24876,202 +24883,399 @@ var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoader
 
 
 
-var JobWidgetControl = /*#__PURE__*/function (_React$Component) {
-  Object(_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(JobWidgetControl, _React$Component);
 
-  function JobWidgetControl(props) {
-    var _this;
+function Jobs() {
+  var _this = this;
 
-    _this = _React$Component.call(this, props) || this;
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])([]),
+      jobs = _useState[0],
+      setJobs = _useState[1];
 
-    _this.onChange = function (event, editor) {//   const data = editor.getData();
-      //   this.props.onChange(data);
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(1),
+      pageNum = _useState2[0],
+      setPageNum = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(1),
+      totalPages = _useState3[0],
+      setTotalPages = _useState3[1];
+
+  var _useState4 = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(false),
+      loading = _useState4[0],
+      setloading = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(false),
+      addNewJob = _useState5[0],
+      setAddNewJob = _useState5[1];
+
+  var editJob = /*#__PURE__*/function () {
+    var _ref = Object(_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee(job) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              setloading(true);
+              _context.next = 3;
+              return axios__WEBPACK_IMPORTED_MODULE_6___default.a.post("https://shehrvancouver.netlify.app/.netlify/functions/jobs", {
+                job: job
+              });
+
+            case 3:
+              setloading(false);
+
+            case 4:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    return function editJob(_x) {
+      return _ref.apply(this, arguments);
     };
+  }();
 
-    _this.addNewJob = function (job) {
-      _this.setState({
-        jobs: [].concat(Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_this.state.jobs), [job])
-      });
+  var deleteJob = /*#__PURE__*/function () {
+    var _ref2 = Object(_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee2(job) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              if (!window.confirm("Are you sure you want to delete " + job.name + "?")) {
+                _context2.next = 3;
+                break;
+              }
+
+              _context2.next = 3;
+              return axios__WEBPACK_IMPORTED_MODULE_6___default.a.delete("https://shehrvancouver.netlify.app/.netlify/functions/jobs", {
+                id: job._id
+              });
+
+            case 3:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+
+    return function deleteJob(_x2) {
+      return _ref2.apply(this, arguments);
     };
+  }();
 
-    _this.editJob = function (newjob) {
-      _this.setState({
-        jobs: _this.state.jobs.map(function (job) {
-          return job._id === newjob._id ? newjob : job;
-        })
-      });
+  var addJob = /*#__PURE__*/function () {
+    var _ref3 = Object(_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee3(job) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              setloading(true);
+              _context3.prev = 1;
+              _context3.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_6___default.a.post("https://shehrvancouver.netlify.app/.netlify/functions/jobs", {
+                job: job
+              });
+
+            case 4:
+              _context3.next = 8;
+              break;
+
+            case 6:
+              _context3.prev = 6;
+              _context3.t0 = _context3["catch"](1);
+
+            case 8:
+              setloading(false);
+
+            case 9:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, null, [[1, 6]]);
+    }));
+
+    return function addJob(_x3) {
+      return _ref3.apply(this, arguments);
     };
+  }();
 
-    _this.deleteJob = function (id) {
-      console.log("delete");
-    };
-
-    _this.toggleAddNewJob = function () {
-      _this.setState({
-        addNewJob: !_this.state.addNewJob
-      });
-    };
-
-    _this.state = {
-      jobs: [],
-      addNewJob: false
-    };
-    return _this;
-  }
-
-  var _proto = JobWidgetControl.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    this.setState({
-      jobs: [{
-        name: "Job 1",
-        description: "This is the description of first job",
-        pay: 12,
-        location: "surrey",
-        email: "sample@example.com"
-      }, {
-        name: "Job 2",
-        description: "This is the description of first job",
-        pay: 12,
-        location: "surrey",
-        email: "sample@example.com"
-      }, {
-        name: "Job 3",
-        description: "This is the description of first job This is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first jobThis is the description of first job",
-        pay: 12,
-        location: "surrey",
-        email: "sample@example.com"
-      }]
-    });
+  var toggleAddNewJob = function toggleAddNewJob() {
+    setAddNewJob(!addNewJob);
   };
 
-  _proto.render = function render() {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_3__["Helmet"], {
-      __self: this,
+  Object(react__WEBPACK_IMPORTED_MODULE_4__["useEffect"])(function () {
+    setloading(true);
+
+    var getData = /*#__PURE__*/function () {
+      var _ref4 = Object(_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee4() {
+        var _yield$axios$get, data;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_6___default.a.get("https://shehrvancouver.netlify.app/.netlify/functions/jobs?page=" + pageNum);
+
+              case 2:
+                _yield$axios$get = _context4.sent;
+                data = _yield$axios$get.data;
+                setTotalPages(data.pages);
+                setPageNum(data.page);
+                setJobs(Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(data.jobs));
+
+              case 7:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4);
+      }));
+
+      return function getData() {
+        return _ref4.apply(this, arguments);
+      };
+    }();
+
+    getData();
+    setloading(false);
+  }, [pageNum]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Container"], {
+    className: "py-5 position-relative",
+    style: {
+      minHeight: "80vh"
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72,
+      columnNumber: 5
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_7__["Helmet"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73,
+      columnNumber: 7
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
+    rel: "stylesheet",
+    href: "/static/adminFiles/admin.css",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 74,
+      columnNumber: 9
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
+    rel: "stylesheet",
+    href: "/static/adminFiles/bootstrap.min.css",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75,
+      columnNumber: 9
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
+    rel: "stylesheet",
+    href: "/static/adminFiles/jobDetails.css",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 76,
+      columnNumber: 9
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
+    rel: "stylesheet",
+    href: "/static/adminFiles/admin.css",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 77,
+      columnNumber: 9
+    }
+  })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h1", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 80,
+      columnNumber: 9
+    }
+  }, "Loading...") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_4___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", {
+    className: "d-flex justify-content-between align-items-center",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 83,
+      columnNumber: 11
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h1", {
+    className: "mb-3",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 84,
+      columnNumber: 13
+    }
+  }, "List of jobs:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], {
+    color: "info",
+    onClick: toggleAddNewJob,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 85,
+      columnNumber: 13
+    }
+  }, "Add new")), jobs.length > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Row"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 91,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_components_JobList__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    jobs: jobs,
+    admin: true,
+    editJob: editJob,
+    deleteJob: deleteJob,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 92,
+      columnNumber: 15
+    }
+  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h1", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 100,
+      columnNumber: 13
+    }
+  }, "Sorry, no jobs found come back later"), addNewJob && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_components_AddNewJob__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    jobs: jobs,
+    addJob: addJob,
+    toggleAddNewJob: toggleAddNewJob,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 103,
+      columnNumber: 13
+    }
+  }), totalPages > 1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Pagination"], {
+    "aria-label": "Page navigation",
+    className: "mt-5",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 110,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationItem"], {
+    disabled: pageNum <= 1,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 111,
+      columnNumber: 15
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
+    first: true,
+    onClick: function onClick() {
+      return setPageNum(1);
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 112,
+      columnNumber: 17
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationItem"], {
+    disabled: pageNum <= 1,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 114,
+      columnNumber: 15
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
+    previous: true,
+    onClick: function onClick() {
+      return setPageNum(pageNum - 1);
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 115,
+      columnNumber: 17
+    }
+  })), Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(Array(totalPages).keys()).map(function (page) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationItem"], {
+      key: page + 1,
+      active: pageNum - 1 === page,
+      __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65,
-        columnNumber: 9
+        lineNumber: 121,
+        columnNumber: 17
       }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("link", {
-      rel: "stylesheet",
-      href: "/static/adminFiles/admin.css",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 66,
-        columnNumber: 11
-      }
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("link", {
-      rel: "stylesheet",
-      href: "/static/adminFiles/bootstrap.min.css",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 67,
-        columnNumber: 11
-      }
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("link", {
-      rel: "stylesheet",
-      href: "/static/adminFiles/jobDetails.css",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 68,
-        columnNumber: 11
-      }
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("link", {
-      rel: "stylesheet",
-      href: "/static/adminFiles/admin.css",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 69,
-        columnNumber: 11
-      }
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Container"], {
-      className: "py-5 position-relative",
-      style: {
-        minHeight: "80vh"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
+      onClick: function onClick() {
+        return setPageNum(page + 1);
       },
-      __self: this,
+      __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71,
-        columnNumber: 9
+        lineNumber: 122,
+        columnNumber: 19
       }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      className: "d-flex justify-content-between align-items-center",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 75,
-        columnNumber: 11
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h1", {
-      className: "mb-3",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 76,
-        columnNumber: 13
-      }
-    }, "List of jobs:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Button"], {
-      color: "info",
-      onClick: this.toggleAddNewJob,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 77,
-        columnNumber: 13
-      }
-    }, "Add new job")), this.state.jobs.length > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Row"], {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 83,
-        columnNumber: 13
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_JobList__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      jobs: this.state.jobs,
-      admin: true,
-      editJob: this.editJob,
-      deleteJob: this.deleteJob,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 84,
-        columnNumber: 15
-      }
-    })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h1", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 92,
-        columnNumber: 13
-      }
-    }, "Sorry, no jobs found come back later"), this.state.addNewJob && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_AddNewJob__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      addNewJob: this.addNewJob,
-      toggleAddNewJob: this.toggleAddNewJob,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 95,
-        columnNumber: 13
-      }
-    })));
-  };
+    }, page + 1));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationItem"], {
+    disabled: pageNum >= totalPages,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 127,
+      columnNumber: 15
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
+    next: true,
+    onClick: function onClick() {
+      return setPageNum(pageNum + 1);
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 128,
+      columnNumber: 17
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationItem"], {
+    disabled: pageNum >= totalPages,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 130,
+      columnNumber: 15
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
+    last: true,
+    onClick: function onClick() {
+      return setPageNum(totalPages);
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 131,
+      columnNumber: 17
+    }
+  })))));
+}
 
-  // @ts-ignore
-  _proto.__reactstandin__regenerateByEval = function __reactstandin__regenerateByEval(key, code) {
-    // @ts-ignore
-    this[key] = eval(code);
-  };
+__signature__(Jobs, "useState{[jobs, setJobs]([])}\nuseState{[pageNum, setPageNum](1)}\nuseState{[totalPages, setTotalPages](1)}\nuseState{[loading, setloading](false)}\nuseState{[addNewJob, setAddNewJob](false)}\nuseEffect{}");
 
-  return JobWidgetControl;
-}(react__WEBPACK_IMPORTED_MODULE_2___default.a.Component);
-
-
+var _default = Jobs;
+/* harmony default export */ __webpack_exports__["default"] = (_default);
 ;
 
 (function () {
@@ -25081,7 +25285,8 @@ var JobWidgetControl = /*#__PURE__*/function (_React$Component) {
     return;
   }
 
-  reactHotLoader.register(JobWidgetControl, "JobWidgetControl", "/home/garry/projects/shehrvancouver/shehrvancouver/src/cms/JobWidget/index.js");
+  reactHotLoader.register(Jobs, "Jobs", "/home/garry/projects/shehrvancouver/shehrvancouver/src/cms/JobWidget/index.js");
+  reactHotLoader.register(_default, "default", "/home/garry/projects/shehrvancouver/shehrvancouver/src/cms/JobWidget/index.js");
 })();
 
 ;
@@ -25103,9 +25308,9 @@ var JobWidgetControl = /*#__PURE__*/function (_React$Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerator-runtime/runtime.js");
 /* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
@@ -25140,6 +25345,8 @@ var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoader
 
 
 function Accomodations() {
+  var _this = this;
+
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])([]),
       accomodations = _useState[0],
       setAccomodations = _useState[1];
@@ -25160,11 +25367,99 @@ function Accomodations() {
       addNewAccomodation = _useState5[0],
       setAddNewAccomodation = _useState5[1];
 
-  var editAccomodation = function editAccomodation() {};
+  var editAccomodation = /*#__PURE__*/function () {
+    var _ref = Object(_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee(accomodation) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              setloading(true);
+              _context.next = 3;
+              return axios__WEBPACK_IMPORTED_MODULE_6___default.a.post("https://shehrvancouver.netlify.app/.netlify/functions/accomodations", {
+                accomodation: accomodation
+              });
 
-  var deleteAccomodation = function deleteAccomodation() {};
+            case 3:
+              setloading(false);
 
-  var addAccomodation = function addAccomodation() {};
+            case 4:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    return function editAccomodation(_x) {
+      return _ref.apply(this, arguments);
+    };
+  }();
+
+  var deleteAccomodation = /*#__PURE__*/function () {
+    var _ref2 = Object(_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee2(accomodation) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              if (!window.confirm("Are you sure you want to delete " + accomodation.address + "?")) {
+                _context2.next = 3;
+                break;
+              }
+
+              _context2.next = 3;
+              return axios__WEBPACK_IMPORTED_MODULE_6___default.a.delete("https://shehrvancouver.netlify.app/.netlify/functions/accomodations", {
+                id: accomodation._id
+              });
+
+            case 3:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+
+    return function deleteAccomodation(_x2) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+
+  var addAccomodation = /*#__PURE__*/function () {
+    var _ref3 = Object(_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee3(accomodation) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              setloading(true);
+              _context3.prev = 1;
+              _context3.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_6___default.a.post("https://shehrvancouver.netlify.app/.netlify/functions/accomodations", {
+                accomodation: accomodation
+              });
+
+            case 4:
+              _context3.next = 8;
+              break;
+
+            case 6:
+              _context3.prev = 6;
+              _context3.t0 = _context3["catch"](1);
+
+            case 8:
+              setloading(false);
+
+            case 9:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, null, [[1, 6]]);
+    }));
+
+    return function addAccomodation(_x3) {
+      return _ref3.apply(this, arguments);
+    };
+  }();
 
   var toggleAddNewAccomodation = function toggleAddNewAccomodation() {
     setAddNewAccomodation(!addNewAccomodation);
@@ -25174,43 +25469,55 @@ function Accomodations() {
     setloading(true);
 
     var getData = /*#__PURE__*/function () {
-      var _ref = Object(_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+      var _ref4 = Object(_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee4() {
         var _yield$axios$get, data;
 
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee4$(_context4) {
           while (1) {
-            switch (_context.prev = _context.next) {
+            switch (_context4.prev = _context4.next) {
               case 0:
-                _context.next = 2;
+                _context4.next = 2;
                 return axios__WEBPACK_IMPORTED_MODULE_6___default.a.get("https://shehrvancouver.netlify.app/.netlify/functions/accomodations?page=" + pageNum);
 
               case 2:
-                _yield$axios$get = _context.sent;
+                _yield$axios$get = _context4.sent;
                 data = _yield$axios$get.data;
                 setTotalPages(data.pages);
-                setAccomodations(Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(data.accomodations));
+                setPageNum(data.page);
+                setAccomodations(Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(data.accomodations));
 
-              case 6:
+              case 7:
               case "end":
-                return _context.stop();
+                return _context4.stop();
             }
           }
-        }, _callee);
+        }, _callee4);
       }));
 
       return function getData() {
-        return _ref.apply(this, arguments);
+        return _ref4.apply(this, arguments);
       };
     }();
 
     getData();
     setloading(false);
   }, [pageNum]);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_4___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_7__["Helmet"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Container"], {
+    className: "py-5 position-relative",
+    style: {
+      minHeight: "80vh"
+    },
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 74,
+      columnNumber: 5
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_7__["Helmet"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75,
       columnNumber: 7
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
@@ -25219,7 +25526,7 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 76,
       columnNumber: 9
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
@@ -25228,7 +25535,7 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 77,
       columnNumber: 9
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
@@ -25237,7 +25544,7 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 78,
       columnNumber: 9
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
@@ -25246,35 +25553,31 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 79,
       columnNumber: 9
     }
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Container"], {
-    className: "py-5 position-relative",
-    style: {
-      minHeight: "80vh"
-    },
+  })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
-      columnNumber: 7
+      lineNumber: 82,
+      columnNumber: 9
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", {
+  }, "Loading...") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_4___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", {
     className: "d-flex justify-content-between align-items-center",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
-      columnNumber: 9
+      lineNumber: 85,
+      columnNumber: 11
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h1", {
     className: "mb-3",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
-      columnNumber: 11
+      lineNumber: 86,
+      columnNumber: 13
     }
   }, "List of jobs:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], {
     color: "info",
@@ -25282,15 +25585,15 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
-      columnNumber: 11
+      lineNumber: 87,
+      columnNumber: 13
     }
   }, "Add new")), accomodations.length > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Row"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
-      columnNumber: 11
+      lineNumber: 93,
+      columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_components_AccomodationList__WEBPACK_IMPORTED_MODULE_8__["default"], {
     accomodations: accomodations,
@@ -25300,15 +25603,15 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
-      columnNumber: 13
+      lineNumber: 94,
+      columnNumber: 15
     }
   })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
-      columnNumber: 11
+      lineNumber: 102,
+      columnNumber: 13
     }
   }, "Sorry, no accomodations found come back later"), addNewAccomodation && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_components_AddNewAccomodation__WEBPACK_IMPORTED_MODULE_9__["default"], {
     accomodations: accomodations,
@@ -25317,10 +25620,116 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
-      columnNumber: 11
+      lineNumber: 105,
+      columnNumber: 13
     }
-  })));
+  }), totalPages > 1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Pagination"], {
+    "aria-label": "Page navigation",
+    className: "mt-5",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 112,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationItem"], {
+    disabled: pageNum <= 1,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 113,
+      columnNumber: 15
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
+    first: true,
+    onClick: function onClick() {
+      return setPageNum(1);
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 114,
+      columnNumber: 17
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationItem"], {
+    disabled: pageNum <= 1,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 116,
+      columnNumber: 15
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
+    previous: true,
+    onClick: function onClick() {
+      return setPageNum(pageNum - 1);
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 117,
+      columnNumber: 17
+    }
+  })), Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(Array(totalPages).keys()).map(function (page) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationItem"], {
+      key: page + 1,
+      active: pageNum - 1 === page,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 123,
+        columnNumber: 17
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
+      onClick: function onClick() {
+        return setPageNum(page + 1);
+      },
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 124,
+        columnNumber: 19
+      }
+    }, page + 1));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationItem"], {
+    disabled: pageNum >= totalPages,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 129,
+      columnNumber: 15
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
+    next: true,
+    onClick: function onClick() {
+      return setPageNum(pageNum + 1);
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 130,
+      columnNumber: 17
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationItem"], {
+    disabled: pageNum >= totalPages,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 132,
+      columnNumber: 15
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
+    last: true,
+    onClick: function onClick() {
+      return setPageNum(totalPages);
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 133,
+      columnNumber: 17
+    }
+  })))));
 }
 
 __signature__(Accomodations, "useState{[accomodations, setAccomodations]([])}\nuseState{[pageNum, setPageNum](1)}\nuseState{[totalPages, setTotalPages](1)}\nuseState{[loading, setloading](false)}\nuseState{[addNewAccomodation, setAddNewAccomodation](false)}\nuseEffect{}");
@@ -26004,7 +26413,15 @@ function AccomodationList(_ref) {
         lineNumber: 37,
         columnNumber: 15
       }
-    }, accomodation.description.substr(0, 40), " . . . ."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    }, accomodation.description.substr(0, 40), " . . . ."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "d-flex justify-content-between align-items-center",
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40,
+        columnNumber: 15
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
       color: "info",
       onClick: function onClick() {
         return setDetailAccomodationIndex(i);
@@ -26012,17 +26429,39 @@ function AccomodationList(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40,
-        columnNumber: 15
+        lineNumber: 41,
+        columnNumber: 17
       }
-    }, "Details"))));
+    }, "Details"), admin && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      color: "info",
+      onClick: function onClick() {
+        return setEditAccomodationIndex(i);
+      },
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 48,
+        columnNumber: 19
+      }
+    }, "Edit"), admin && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      color: "danger",
+      onClick: function onClick() {
+        return deleteAccomodation(accomodation);
+      },
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 56,
+        columnNumber: 19
+      }
+    }, "Delete")))));
   }), detailAccomodationIndex !== -1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AccomodationDetails__WEBPACK_IMPORTED_MODULE_2__["default"], {
     accomodation: accomodations[detailAccomodationIndex],
     setDetailAccomodationIndex: setDetailAccomodationIndex,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 69,
       columnNumber: 9
     }
   }), admin && editAccomodationIndex !== -1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddNewAccomodation__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -26034,7 +26473,7 @@ function AccomodationList(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 75,
       columnNumber: 9
     }
   }));
@@ -26134,7 +26573,7 @@ function AddNewJob(_ref) {
   var submit = function submit(e) {
     e.preventDefault();
 
-    if (accomodationDetails._id !== "") {
+    if (accomodationDetails._id) {
       editAccomodation({
         _id: accomodationDetails._id,
         address: address,
@@ -26420,7 +26859,7 @@ var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoader
 
 
 function AddNewJob(_ref) {
-  var addNewJob = _ref.addNewJob,
+  var addJob = _ref.addJob,
       editJob = _ref.editJob,
       toggleAddNewJob = _ref.toggleAddNewJob,
       _ref$jobDetails = _ref.jobDetails,
@@ -26471,7 +26910,7 @@ function AddNewJob(_ref) {
         description: description
       });
     } else {
-      addNewJob({
+      addJob({
         name: name,
         pay: pay,
         location: location,
@@ -27031,11 +27470,14 @@ function JobList(_ref) {
       }
     }, "Edit"), admin && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
       color: "danger",
+      onClick: function onClick() {
+        return deleteJob(job);
+      },
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41,
-        columnNumber: 27
+        lineNumber: 42,
+        columnNumber: 19
       }
     }, "Delete")))));
   }), detailJobIndex !== -1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_JobDetails__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -27044,7 +27486,7 @@ function JobList(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 52,
       columnNumber: 9
     }
   }), admin && editJobIndex !== -1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddNewJob__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -27056,7 +27498,7 @@ function JobList(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 58,
       columnNumber: 9
     }
   }));
@@ -27098,7 +27540,7 @@ var _default = JobList;
 
 // extracted by mini-css-extract-plugin
     if(true) {
-      // 1609972660226
+      // 1610051079205
       var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.i, {"hmr":true,"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);

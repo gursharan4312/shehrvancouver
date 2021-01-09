@@ -32,6 +32,7 @@ exports.handler = async (event, context) => {
   let response;
   if (event.httpMethod === "POST") {
     const {
+      id,
       address,
       description,
       rent,
@@ -39,27 +40,42 @@ exports.handler = async (event, context) => {
       email,
       phoneNumber,
     } = JSON.parse(event.body);
-    const newAccomodation = new AccomodationModel({
-      address,
-      description,
-      rent,
-      furnished,
-      email,
-      phoneNumber,
-      date: new Date(),
-    });
-
-    try {
-      await newAccomodation.save();
+    if (id) {
+      const accomodation = await AccomodationModel.findById(id);
+      accomodation.address = address;
+      accomodation.description = description;
+      accomodation.rent = rent;
+      accomodation.furnished = furnished;
+      accomodation.email = email;
+      accomodation.phoneNumber = phoneNumber;
+      await accomodation.save();
       response = {
         statusCode: 200,
         body: "Accomodation added!!",
       };
-    } catch (err) {
-      response = {
-        statusCode: 500,
-        body: "Something went wrong try again!!",
-      };
+    } else {
+      const newAccomodation = new AccomodationModel({
+        address,
+        description,
+        rent,
+        furnished,
+        email,
+        phoneNumber,
+        date: new Date(),
+      });
+
+      try {
+        await newAccomodation.save();
+        response = {
+          statusCode: 200,
+          body: "Accomodation added!!",
+        };
+      } catch (err) {
+        response = {
+          statusCode: 500,
+          body: "Something went wrong try again!!",
+        };
+      }
     }
   } else if (event.httpMethod === "GET") {
     try {
@@ -82,6 +98,21 @@ exports.handler = async (event, context) => {
       response = {
         statusCode: 500,
         body: "Something went wrong try again!!",
+      };
+    }
+  } else if (event.httpMethod === "DELETE") {
+    const { id } = JSON.parse(event.body);
+    const accomodation = await AccomodationModel.findById(id);
+    if (accomodation) {
+      await accomodation.remove();
+      response = {
+        statusCode: 200,
+        body: "Accomodation Deleted",
+      };
+    } else {
+      response = {
+        statusCode: 404,
+        body: "Accomodation Not Found",
       };
     }
   }

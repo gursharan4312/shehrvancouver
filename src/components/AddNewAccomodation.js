@@ -26,7 +26,7 @@ function AddNewJob({
   );
   const submit = (e) => {
     e.preventDefault();
-    if (accomodationDetails._id !== "") {
+    if (accomodationDetails._id) {
       editAccomodation({
         _id: accomodationDetails._id,
         address,

@@ -37,12 +37,30 @@ function AccomodationList({
               <CardText>
                 {accomodation.description.substr(0, 40)} . . . .
               </CardText>
-              <Button
-                color="info"
-                onClick={() => setDetailAccomodationIndex(i)}
-              >
-                Details
-              </Button>
+              <div className="d-flex justify-content-between align-items-center">
+                <Button
+                  color="info"
+                  onClick={() => setDetailAccomodationIndex(i)}
+                >
+                  Details
+                </Button>
+                {admin && (
+                  <Button
+                    color="info"
+                    onClick={() => setEditAccomodationIndex(i)}
+                  >
+                    Edit
+                  </Button>
+                )}
+                {admin && (
+                  <Button
+                    color="danger"
+                    onClick={() => deleteAccomodation(accomodation)}
+                  >
+                    Delete
+                  </Button>
+                )}
+              </div>
             </CardBody>
           </Card>
         </Col>
