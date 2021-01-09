@@ -35,6 +35,8 @@ function Jobs() {
         "https://shehrvancouver.netlify.app/.netlify/functions/jobs",
         { id: job._id }
       );
+      alert("Deleted");
+      getData();
     }
   };
   const addJob = async (job) => {
@@ -54,18 +56,19 @@ function Jobs() {
     setAddNewJob(!addNewJob);
   };
 
-  useEffect(() => {
+  const getData = async () => {
     setloading(true);
-    const getData = async () => {
-      const { data } = await axios.get(
-        `https://shehrvancouver.netlify.app/.netlify/functions/jobs?page=${pageNum}`
-      );
-      setTotalPages(data.pages);
-      setPageNum(data.page);
-      setJobs([...data.jobs]);
-    };
-    getData();
+    const { data } = await axios.get(
+      `https://shehrvancouver.netlify.app/.netlify/functions/jobs?page=${pageNum}`
+    );
+    setTotalPages(data.pages);
+    setPageNum(data.page);
+    setJobs([...data.jobs]);
     setloading(false);
+  };
+  useEffect(() => {
+    getData();
+    // eslint-disable-next-line
   }, [pageNum]);
 
   return (

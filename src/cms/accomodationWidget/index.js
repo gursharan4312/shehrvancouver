@@ -37,6 +37,8 @@ function Accomodations() {
         "https://shehrvancouver.netlify.app/.netlify/functions/accomodations",
         { id: accomodation._id }
       );
+      alert("It has been deleted");
+      getData();
     }
   };
   const addAccomodation = async (accomodation) => {
@@ -55,19 +57,19 @@ function Accomodations() {
   const toggleAddNewAccomodation = () => {
     setAddNewAccomodation(!addNewAccomodation);
   };
-
-  useEffect(() => {
+  const getData = async () => {
     setloading(true);
-    const getData = async () => {
-      const { data } = await axios.get(
-        `https://shehrvancouver.netlify.app/.netlify/functions/accomodations?page=${pageNum}`
-      );
-      setTotalPages(data.pages);
-      setPageNum(data.page);
-      setAccomodations([...data.accomodations]);
-    };
-    getData();
+    const { data } = await axios.get(
+      `https://shehrvancouver.netlify.app/.netlify/functions/accomodations?page=${pageNum}`
+    );
+    setTotalPages(data.pages);
+    setPageNum(data.page);
+    setAccomodations([...data.accomodations]);
     setloading(false);
+  };
+  useEffect(() => {
+    getData();
+    // eslint-disable-next-line
   }, [pageNum]);
 
   return (

@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "cb1e2a7e0a51abea8a51";
+/******/ 	var hotCurrentHash = "b47033baa289fcc49505";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -24940,7 +24940,7 @@ function Jobs() {
           switch (_context2.prev = _context2.next) {
             case 0:
               if (!window.confirm("Are you sure you want to delete " + job.name + "?")) {
-                _context2.next = 3;
+                _context2.next = 5;
                 break;
               }
 
@@ -24950,6 +24950,10 @@ function Jobs() {
               });
 
             case 3:
+              alert("Deleted");
+              getData();
+
+            case 5:
             case "end":
               return _context2.stop();
           }
@@ -25001,42 +25005,41 @@ function Jobs() {
     setAddNewJob(!addNewJob);
   };
 
-  Object(react__WEBPACK_IMPORTED_MODULE_4__["useEffect"])(function () {
-    setloading(true);
+  var getData = /*#__PURE__*/function () {
+    var _ref4 = Object(_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee4() {
+      var _yield$axios$get, data;
 
-    var getData = /*#__PURE__*/function () {
-      var _ref4 = Object(_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee4() {
-        var _yield$axios$get, data;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              setloading(true);
+              _context4.next = 3;
+              return axios__WEBPACK_IMPORTED_MODULE_6___default.a.get("https://shehrvancouver.netlify.app/.netlify/functions/jobs?page=" + pageNum);
 
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee4$(_context4) {
-          while (1) {
-            switch (_context4.prev = _context4.next) {
-              case 0:
-                _context4.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_6___default.a.get("https://shehrvancouver.netlify.app/.netlify/functions/jobs?page=" + pageNum);
+            case 3:
+              _yield$axios$get = _context4.sent;
+              data = _yield$axios$get.data;
+              setTotalPages(data.pages);
+              setPageNum(data.page);
+              setJobs(Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(data.jobs));
+              setloading(false);
 
-              case 2:
-                _yield$axios$get = _context4.sent;
-                data = _yield$axios$get.data;
-                setTotalPages(data.pages);
-                setPageNum(data.page);
-                setJobs(Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(data.jobs));
-
-              case 7:
-              case "end":
-                return _context4.stop();
-            }
+            case 9:
+            case "end":
+              return _context4.stop();
           }
-        }, _callee4);
-      }));
+        }
+      }, _callee4);
+    }));
 
-      return function getData() {
-        return _ref4.apply(this, arguments);
-      };
-    }();
+    return function getData() {
+      return _ref4.apply(this, arguments);
+    };
+  }();
 
-    getData();
-    setloading(false);
+  Object(react__WEBPACK_IMPORTED_MODULE_4__["useEffect"])(function () {
+    getData(); // eslint-disable-next-line
   }, [pageNum]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Container"], {
     className: "py-5 position-relative",
@@ -25046,14 +25049,14 @@ function Jobs() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 75,
       columnNumber: 5
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_7__["Helmet"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 76,
       columnNumber: 7
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
@@ -25062,7 +25065,7 @@ function Jobs() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 77,
       columnNumber: 9
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
@@ -25071,7 +25074,7 @@ function Jobs() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 78,
       columnNumber: 9
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
@@ -25080,7 +25083,7 @@ function Jobs() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 79,
       columnNumber: 9
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
@@ -25089,14 +25092,14 @@ function Jobs() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 80,
       columnNumber: 9
     }
   })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 83,
       columnNumber: 9
     }
   }, "Loading...") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_4___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", {
@@ -25104,7 +25107,7 @@ function Jobs() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 86,
       columnNumber: 11
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h1", {
@@ -25112,7 +25115,7 @@ function Jobs() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 87,
       columnNumber: 13
     }
   }, "List of jobs:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], {
@@ -25121,14 +25124,14 @@ function Jobs() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 88,
       columnNumber: 13
     }
   }, "Add new")), jobs.length > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Row"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 94,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_components_JobList__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -25139,14 +25142,14 @@ function Jobs() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 95,
       columnNumber: 15
     }
   })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 103,
       columnNumber: 13
     }
   }, "Sorry, no jobs found come back later"), addNewJob && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_components_AddNewJob__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -25156,7 +25159,7 @@ function Jobs() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103,
+      lineNumber: 106,
       columnNumber: 13
     }
   }), totalPages > 1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Pagination"], {
@@ -25165,7 +25168,7 @@ function Jobs() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110,
+      lineNumber: 113,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationItem"], {
@@ -25173,7 +25176,7 @@ function Jobs() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111,
+      lineNumber: 114,
       columnNumber: 15
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
@@ -25184,7 +25187,7 @@ function Jobs() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112,
+      lineNumber: 115,
       columnNumber: 17
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationItem"], {
@@ -25192,7 +25195,7 @@ function Jobs() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114,
+      lineNumber: 117,
       columnNumber: 15
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
@@ -25203,7 +25206,7 @@ function Jobs() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115,
+      lineNumber: 118,
       columnNumber: 17
     }
   })), Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(Array(totalPages).keys()).map(function (page) {
@@ -25213,7 +25216,7 @@ function Jobs() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 121,
+        lineNumber: 124,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
@@ -25223,7 +25226,7 @@ function Jobs() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 122,
+        lineNumber: 125,
         columnNumber: 19
       }
     }, page + 1));
@@ -25232,7 +25235,7 @@ function Jobs() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 127,
+      lineNumber: 130,
       columnNumber: 15
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
@@ -25243,7 +25246,7 @@ function Jobs() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128,
+      lineNumber: 131,
       columnNumber: 17
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationItem"], {
@@ -25251,7 +25254,7 @@ function Jobs() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130,
+      lineNumber: 133,
       columnNumber: 15
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
@@ -25262,7 +25265,7 @@ function Jobs() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131,
+      lineNumber: 134,
       columnNumber: 17
     }
   })))));
@@ -25396,7 +25399,7 @@ function Accomodations() {
           switch (_context2.prev = _context2.next) {
             case 0:
               if (!window.confirm("Are you sure you want to delete " + accomodation.address + "?")) {
-                _context2.next = 3;
+                _context2.next = 5;
                 break;
               }
 
@@ -25406,6 +25409,10 @@ function Accomodations() {
               });
 
             case 3:
+              alert("It has been deleted");
+              getData();
+
+            case 5:
             case "end":
               return _context2.stop();
           }
@@ -25457,42 +25464,41 @@ function Accomodations() {
     setAddNewAccomodation(!addNewAccomodation);
   };
 
-  Object(react__WEBPACK_IMPORTED_MODULE_4__["useEffect"])(function () {
-    setloading(true);
+  var getData = /*#__PURE__*/function () {
+    var _ref4 = Object(_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee4() {
+      var _yield$axios$get, data;
 
-    var getData = /*#__PURE__*/function () {
-      var _ref4 = Object(_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee4() {
-        var _yield$axios$get, data;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              setloading(true);
+              _context4.next = 3;
+              return axios__WEBPACK_IMPORTED_MODULE_6___default.a.get("https://shehrvancouver.netlify.app/.netlify/functions/accomodations?page=" + pageNum);
 
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee4$(_context4) {
-          while (1) {
-            switch (_context4.prev = _context4.next) {
-              case 0:
-                _context4.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_6___default.a.get("https://shehrvancouver.netlify.app/.netlify/functions/accomodations?page=" + pageNum);
+            case 3:
+              _yield$axios$get = _context4.sent;
+              data = _yield$axios$get.data;
+              setTotalPages(data.pages);
+              setPageNum(data.page);
+              setAccomodations(Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(data.accomodations));
+              setloading(false);
 
-              case 2:
-                _yield$axios$get = _context4.sent;
-                data = _yield$axios$get.data;
-                setTotalPages(data.pages);
-                setPageNum(data.page);
-                setAccomodations(Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(data.accomodations));
-
-              case 7:
-              case "end":
-                return _context4.stop();
-            }
+            case 9:
+            case "end":
+              return _context4.stop();
           }
-        }, _callee4);
-      }));
+        }
+      }, _callee4);
+    }));
 
-      return function getData() {
-        return _ref4.apply(this, arguments);
-      };
-    }();
+    return function getData() {
+      return _ref4.apply(this, arguments);
+    };
+  }();
 
-    getData();
-    setloading(false);
+  Object(react__WEBPACK_IMPORTED_MODULE_4__["useEffect"])(function () {
+    getData(); // eslint-disable-next-line
   }, [pageNum]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Container"], {
     className: "py-5 position-relative",
@@ -25502,14 +25508,14 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 76,
       columnNumber: 5
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_7__["Helmet"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 77,
       columnNumber: 7
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
@@ -25518,7 +25524,7 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 78,
       columnNumber: 9
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
@@ -25527,7 +25533,7 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 79,
       columnNumber: 9
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
@@ -25536,7 +25542,7 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78,
+      lineNumber: 80,
       columnNumber: 9
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("link", {
@@ -25545,14 +25551,14 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 81,
       columnNumber: 9
     }
   })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 84,
       columnNumber: 9
     }
   }, "Loading...") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_4___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", {
@@ -25560,7 +25566,7 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 87,
       columnNumber: 11
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h1", {
@@ -25568,7 +25574,7 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 88,
       columnNumber: 13
     }
   }, "List of jobs:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], {
@@ -25577,14 +25583,14 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 89,
       columnNumber: 13
     }
   }, "Add new")), accomodations.length > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Row"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93,
+      lineNumber: 95,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_components_AccomodationList__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -25595,14 +25601,14 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94,
+      lineNumber: 96,
       columnNumber: 15
     }
   })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 104,
       columnNumber: 13
     }
   }, "Sorry, no accomodations found come back later"), addNewAccomodation && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_components_AddNewAccomodation__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -25612,7 +25618,7 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105,
+      lineNumber: 107,
       columnNumber: 13
     }
   }), totalPages > 1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Pagination"], {
@@ -25621,7 +25627,7 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112,
+      lineNumber: 114,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationItem"], {
@@ -25629,7 +25635,7 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113,
+      lineNumber: 115,
       columnNumber: 15
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
@@ -25640,7 +25646,7 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114,
+      lineNumber: 116,
       columnNumber: 17
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationItem"], {
@@ -25648,7 +25654,7 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116,
+      lineNumber: 118,
       columnNumber: 15
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
@@ -25659,7 +25665,7 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117,
+      lineNumber: 119,
       columnNumber: 17
     }
   })), Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(Array(totalPages).keys()).map(function (page) {
@@ -25669,7 +25675,7 @@ function Accomodations() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 123,
+        lineNumber: 125,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
@@ -25679,7 +25685,7 @@ function Accomodations() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 124,
+        lineNumber: 126,
         columnNumber: 19
       }
     }, page + 1));
@@ -25688,7 +25694,7 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 129,
+      lineNumber: 131,
       columnNumber: 15
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
@@ -25699,7 +25705,7 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130,
+      lineNumber: 132,
       columnNumber: 17
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationItem"], {
@@ -25707,7 +25713,7 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 132,
+      lineNumber: 134,
       columnNumber: 15
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["PaginationLink"], {
@@ -25718,7 +25724,7 @@ function Accomodations() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133,
+      lineNumber: 135,
       columnNumber: 17
     }
   })))));
