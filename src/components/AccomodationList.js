@@ -35,7 +35,9 @@ function AccomodationList({
                 </p>
               </CardSubtitle>
               <CardText>
-                {accomodation.description.substr(0, 40)} . . . .
+                {accomodation.description &&
+                  accomodation.description.substr(0, 40)}{" "}
+                . . . .
               </CardText>
               <div className="d-flex justify-content-between align-items-center">
                 <Button

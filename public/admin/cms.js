@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "745d9719169eed8ebd46";
+/******/ 	var hotCurrentHash = "f9f935a5f925914a5743";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -26413,12 +26413,12 @@ function AccomodationList(_ref) {
         lineNumber: 37,
         columnNumber: 15
       }
-    }, accomodation.description.substr(0, 40), " . . . ."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, accomodation.description && accomodation.description.substr(0, 40), " ", ". . . ."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "d-flex justify-content-between align-items-center",
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40,
+        lineNumber: 42,
         columnNumber: 15
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -26429,7 +26429,7 @@ function AccomodationList(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41,
+        lineNumber: 43,
         columnNumber: 17
       }
     }, "Details"), admin && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -26440,7 +26440,7 @@ function AccomodationList(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48,
+        lineNumber: 50,
         columnNumber: 19
       }
     }, "Edit"), admin && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -26451,7 +26451,7 @@ function AccomodationList(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56,
+        lineNumber: 58,
         columnNumber: 19
       }
     }, "Delete")))));
@@ -26461,7 +26461,7 @@ function AccomodationList(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 71,
       columnNumber: 9
     }
   }), admin && editAccomodationIndex !== -1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddNewAccomodation__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -26473,7 +26473,7 @@ function AccomodationList(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 77,
       columnNumber: 9
     }
   }));
